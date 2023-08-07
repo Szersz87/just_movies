@@ -3,13 +3,14 @@
   flex-direction: row;
   text-align: center;
 }
+
 .imageWithIcons {
   display: flex;
   align-items: center;
   padding: 1rem;
-  .iconsContainer svg{
-    margin-left: 2rem;
-    align-content: space-around;
-    gap: 10px;
-  }
 }
+.imageWithIcons .iconsContainer svg {
+  margin-left: 2rem;
+  align-content: space-around;
+  gap: 10px;
+}/*# sourceMappingURL=navBar.css.map */

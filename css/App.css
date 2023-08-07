@@ -1,0 +1,15 @@
+.menu {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.menu .menu > * {
+  margin-right: 3rem;
+  margin-top: 0.5rem;
+}
+.menu .menu a {
+  text-decoration: none;
+  color: #a52017;
+}/*# sourceMappingURL=App.css.map */
