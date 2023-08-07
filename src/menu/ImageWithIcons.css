@@ -1,0 +1,11 @@
+.image-with-icons {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .icons-container {
+    display: flex;
+    gap: 10px;
+  }
+  
