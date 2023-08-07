@@ -1,18 +1,20 @@
 import React from 'react'; 
-import Logo from './logo'
+
 import Menu from './menu'
-import MyIkons from './components/ikons';
+import ImageWithIcons from './image';
+import logo from '../assets/images/logo.jpg';
+import { faSearch, faUser, faBell, faInfo } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar() {
+  const iconList = [faSearch, faUser, faBell, faInfo];
+
   return (
     <div className="navBar">
-      <div>  <Logo /></div>
+      <div><ImageWithIcons imageSrc={logo} /></div>
       <div>
        <Menu />
       </div>
-      <div> 
-        <MyIkons />
-    </div>
+      <div><ImageWithIcons iconList={iconList} /></div>
     </div>
   );
 }
