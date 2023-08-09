@@ -1,12 +1,7 @@
 import React from 'react';
-import '../../css/App.css';
-import NavBar from '../navBar';
+// import '../../css/App.css';
 
-function Movies() {
-  return (
-     <div><NavBar /></div>
-    
-  );
+
+export default function Movies() {
+  return <h1>Movies</h1>
 }
-
-export default Movies;

@@ -1,14 +1,16 @@
 .navBar {
+  background-color: #a52017;
+  color: white;
   display: flex;
   flex-direction: row;
   text-align: center;
 }
-.imageWithIcons {
+.images {
   display: flex;
   align-items: center;
   padding: 1rem;
   .iconsContainer svg{
-    margin-left: 2rem;
+    margin-left: 3rem;
     align-content: space-around;
     gap: 10px;
   }

@@ -1,12 +1,7 @@
 import React from 'react';
-import '../../css/App.css';
-import NavBar from '../navBar';
+// import '../../css/App.css';
 
-function MyList() {
-  return (
-     <div><NavBar /></div>
-    
-  );
+
+export default function MyList() {
+  return <h1>MyList</h1>
 }
-
-export default MyList;

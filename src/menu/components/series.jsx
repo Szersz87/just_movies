@@ -1,12 +1,7 @@
 import React from 'react';
-import '../../css/App.css';
-import NavBar from '../navBar';
+// import '../../css/App.css';
 
-function Series() {
-  return (
-     <div><NavBar /></div>
-    
-  );
+
+export default function Series() {
+  return <h1>Series</h1>
 }
-
-export default Series;
