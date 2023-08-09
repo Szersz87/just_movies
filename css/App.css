@@ -1,15 +1,23 @@
 .menu {
   font-size: 1.5rem;
   font-weight: bold;
+  align-items: center;
+}
+.menu ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
 }
-.menu .menu > * {
-  margin-right: 3rem;
-  margin-top: 0.5rem;
+.menu ul li {
+  margin-left: 3rem;
 }
-.menu .menu a {
+.menu ul li a {
+  height: 100%;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: #a52017;
+  color: white;
+}
+.menu ul li a:hover {
+  color: black;
 }/*# sourceMappingURL=App.css.map */

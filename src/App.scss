@@ -1,15 +1,24 @@
 .menu {
+  // margin-top: 2.8rem;
   font-size: 1.5rem;
   font-weight: bold;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  .menu > * {
-    margin-right: 3rem;
-    margin-top: 0.5rem;
-  }
-  .menu a {
-    text-decoration: none;
-    color: #a52017;
+  align-items: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    li {
+      margin-left: 3rem;
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        color: black;
+      }
+    }
   }
 }

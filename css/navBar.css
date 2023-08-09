@@ -1,4 +1,5 @@
 .navBar {
+  max-height: 14vh;
   background-color: #a52017;
   color: white;
   display: flex;

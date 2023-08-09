@@ -1,5 +1,6 @@
 import React from 'react';
-import HomePage from './components/homePage';
+import Layout from './components/layout'
+// import HomePage from './components/homePage';
 import Series from './components/series';
 import Movies from './components/movies';
 import NewAndPopular from './components/newAndPopular';
@@ -10,16 +11,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 export default function Menu ()  {
-  return 
+  return (
   <BrowserRouter>
   <Routes>
-    <Route path="/" element={<HomePage />}>
-      <Route path="series" element={<Series />} />
-      <Route path="movies" element={<Movies />} />
-      <Route path="newAndPopular" element={<NewAndPopular />} />
-      <Route path="MyList" element={<MyList />} />
+    <Route path="/" element={<Layout />}>
+      <Route index element={<homePage />} />
+      <Route path="/series" element={<Series />} />
+      <Route path="/movies" element={<Movies />} />
+      <Route path="/newAndPopular" element={<NewAndPopular />} />
+      <Route path="/MyList" element={<MyList />} />
     </Route>
   </Routes>
 </BrowserRouter>
-  
+  )
 };
+
+
