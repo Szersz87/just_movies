@@ -10,7 +10,7 @@ import NavBar from './menu/navBar';
 
 function App() {
   return (
-     <div><NavBar /></div>
+     <div className='menu'><NavBar /></div>
     
   );
 }
