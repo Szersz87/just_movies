@@ -1,0 +1,12 @@
+.card {
+  background-image: url(../assets/images/racing-3415413_1280.jpg);
+  background-size: cover;
+  width: 100vh;
+  height: 40vh;
+  opacity: 0.8;
+}
+.card__text {
+  width: 40vh;
+  font-size: 1.4rem;
+  color: black;
+}/*# sourceMappingURL=header.css.map */
