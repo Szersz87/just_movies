@@ -1,6 +1,6 @@
 import React from 'react'; 
 import Images from './image';
-import logo from '../assets/images/logo.jpg';
+import logo from '../../../assets/images/logo.jpg';
 import { faSearch, faUser, faBell, faInfo } from '@fortawesome/free-solid-svg-icons';
 import Menu from './menu';
 
