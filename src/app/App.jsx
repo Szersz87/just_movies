@@ -1,20 +1,20 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
-import "./components/menu/navBar.scss";
-import "./components/header/header.scss";
-import Header from "./components/header/header";
-import NavBar from "./components/menu/navBar";
+import "./components/menu/header.scss";
+import "./components/hero/hero.scss";
+import Hero from "./components/hero/hero";
+import Header from "./components/menu/header";
 
 function App() {
   return (
     <>
       <div className="menu">
-        <NavBar />
+        <Header />
       </div>
       ;
       <div>
-        <Header />
+        <Hero />
       </div>
     </>
   );

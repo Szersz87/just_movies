@@ -1,21 +1,25 @@
-import React from 'react'; 
-import Images from './image';
-import logo from '../../../assets/images/logo.jpg';
-import { faSearch, faUser, faBell, faInfo } from '@fortawesome/free-solid-svg-icons';
-import Menu from './menu';
+import React from "react";
+import Layout from "../pages/layout";
+import Series from "../pages/series";
+import Movies from "../pages/movies";
+import NewAndPopular from "../pages/newAndPopular";
+import MyList from "../pages/myList";
+import Images from "../../../shared/logo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function NavBar() {
-  const iconList = [faSearch, faUser, faBell, faInfo];
-
+export default function NavBar() {
   return (
-    <div className="navBar">
-      <div><Images imageSrc={logo} /></div>
-      <div>
-       <Menu />
-      </div>
-      <div><Images iconList={iconList} /></div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<homePage />} />
+          <Route path="/" element={<Images />} />
+          <Route path="/series" element={<Series />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/newAndPopular" element={<NewAndPopular />} />
+          <Route path="/MyList" element={<MyList />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default NavBar;
