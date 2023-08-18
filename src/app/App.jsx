@@ -1,23 +1,43 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Router, Route, BrowserRouter  } from "react-router-dom";
 import "./App.scss";
 import "./components/menu/header.scss";
 import "./components/hero/hero.scss";
 import Hero from "./components/hero/hero";
 import Header from "./components/menu/header";
+import Root from "../routes/root"
 
-function App() {
+// Pages
+import Series from "./components/pages/series";
+import Movies from "./components/pages/movies";
+import NewAndPopular from "./components/pages/newAndPopular";
+import MyList from "./components/pages/myList";
+
+// layouts
+import Layout from './components/pages/layout'
+
+
+// const Routes = createBrowserRouter([
+//   { path : "/", element : <Layout />, children : [
+//     { path : "/", element : <homePage />},
+//     { path : "/series", element : <Series />},
+//     { path : "/movies", element : <Movies />},
+//     { path : "/newAndPopular", element : <NewAndPopular />},
+//     { path : "/MyList", element : <MyList />}
+//   ]},
+  
+// ]);
+
+const App = () => {
   return (
-    <>
-      <div className="menu">
-        <Header />
-      </div>
-      ;
-      <div>
-        <Hero />
-      </div>
-    </>
-  );
-}
+    
+<Root />
 
-export default App;
+//  <RouterProvider router={Routes} />
+ 
+    );
+  }
+
+  export default App;
+
+  
