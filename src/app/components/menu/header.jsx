@@ -18,14 +18,11 @@ function Header() {
       <div>
         <Images imageSrc={logo} />
       </div>
-      
-        <Layout />
-      
+      <Layout />
       <div>
         <NavBarRight iconList={iconList} />
       </div>
-     </div>
-
+    </div>
   );
 }
 
