@@ -15,10 +15,10 @@ export default function Layout() {
             <Link to="/movies">Movies</Link>
           </li>
           <li>
-            <Link to="/newAndPopular">New And Popular</Link>
+            <Link to="/newAndPopular">New&Popular</Link>
           </li>
           <li>
-            <Link to="/myList">My List</Link>
+            <Link to="/myList">MyList</Link>
           </li>
         </ul>
       </nav>

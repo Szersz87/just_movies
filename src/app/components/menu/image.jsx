@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Images = ({ imageSrc = null, iconList = [] }) => {
   return (
     <div className="images">
-       {imageSrc && <img src={imageSrc} alt="Logo" max-width="6vh" max-height="14vh" />}
+       {imageSrc && <img src={imageSrc} alt="Logo"/>}
       <div className="iconsContainer">
         {iconList.map((icon, index) => (
           <FontAwesomeIcon key={index} icon={icon} />
