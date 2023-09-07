@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
-export default function Layout() {
+export default function NavigationMenu() {
   return (
     <>
       <nav className="menu">
