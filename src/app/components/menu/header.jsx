@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./icons";
+import Icon from "./icons";
 import NavMenu from "../pages/navigationMenu";
 import Logo from "./logo"
 import logoImg from "../../../assets/images/logo.jpg";
@@ -10,9 +10,9 @@ import {
   faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
-  const iconList = [faSearch, faUser, faBell, faInfo];
+const iconList = [faSearch, faUser, faBell, faInfo];
 
+function Header() {
   return (
     <div className="navBar">
       <div className="images">
@@ -20,7 +20,7 @@ function Header() {
       </div>
       <NavMenu />
       <div className="iconsContainer">
-        <Image type={'icon'} />
+      <Icon iconList={iconList} />
       </div>
     </div>
   );
