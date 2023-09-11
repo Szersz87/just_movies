@@ -1,27 +1,16 @@
 import React from "react";
-import Icon from "./icons";
+import LeftNav from "./leftNav"
 import NavMenu from "../pages/navigationMenu";
-import Logo from "./logo"
-import logoImg from "../../../assets/images/logo.jpg";
-import {
-  faSearch,
-  faUser,
-  faBell,
-  faInfo,
-} from "@fortawesome/free-solid-svg-icons";
+import RightNav from "./rightNav"
 
-const iconList = [faSearch, faUser, faBell, faInfo];
+
 
 function Header() {
   return (
     <div className="navBar">
-      <div className="images">
-        <Logo imageSrc={logoImg}/>
-      </div>
+      <LeftNav />
       <NavMenu />
-      <div className="iconsContainer">
-      <Icon iconList={iconList} />
-      </div>
+      <RightNav />
     </div>
   );
 }
