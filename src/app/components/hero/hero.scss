@@ -1,12 +1,35 @@
 .card {
     background-image: url(../../../assets/images/racing-3415413_1280.jpg);
     background-size: cover;
+    background-position: center;
     width: 100%vh;
     height: 40vh;
     opacity: 0.8;  
-    &__text {
+    .cardText {
+        margin-left: 2rem;
         width: 40vh;
         font-size: 1.4rem;
         color: black;
+    }
+    .cardBtns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 2rem;
+        width: 10%;
+        .cardBtnPlay {
+            padding: 1rem 2rem;
+            border: 1px solid black;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .cardBtnInfo {
+            background-color: gray;
+            padding: 1rem 2rem;
+            border: 1px solid black;
+            border-radius: 8px;
+            cursor: pointer;
+
+        }
     }
 }

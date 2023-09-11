@@ -1,13 +1,17 @@
 import React from "react";
+import BtnInfo from '../../../shared/buttons/infoBt'
+import BtnPlay from '../../../shared/buttons/playBt'
 
-export default function header () {
+function Hero () {
     return (
         <div className="card">
-            <h3 className="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-            <div className="card__btns">
-                <div className="card__btn"></div>
-                <div className="card__btn"></div>
+            <h3 className="cardText">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <div className="cardBtns">
+                < BtnPlay />
+                < BtnInfo />
             </div>
         </div>
     )
   }
+
+  export default Hero;
