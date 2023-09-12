@@ -1,6 +1,6 @@
 import React from "react";
-import BtnInfo from '../../../shared/buttons/infoBt'
-import BtnPlay from '../../../shared/buttons/playBt'
+import BtnInfo from '../../../shared/buttons/InfoBt'
+import BtnPlay from '../../../shared/buttons/PlayBt'
 
 function Hero () {
     return (

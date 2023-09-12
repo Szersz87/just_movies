@@ -1,7 +1,7 @@
 import React from "react";
-import LeftNav from "./leftNav"
-import NavMenu from "../pages/navigationMenu";
-import RightNav from "./rightNav"
+import LeftNav from "./LeftNav"
+import NavMenu from "../pages/NavigationMenu";
+import RightNav from "./RightNavi"
 
 
 

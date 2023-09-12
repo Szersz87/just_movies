@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "../app/components/menu/header";
-import HomePage from "../app/components/pages/homePage";
-import Series from "../app/components/pages/series";
-import Movies from "../app/components/pages/movies";
-import NewAndPopular from "../app/components/pages/newAndPopular";
-import MyList from "../app/components/pages/myList";
+import Header from "../app/components/menu/Header";
+import HomePage from "../app/components/pages/HomePage";
+import Series from "../app/components/pages/Series";
+import Movies from "../app/components/pages/Movies";
+import NewAndPopular from "../app/components/pages/NewAndPopular";
+import MyList from "../app/components/pages/MyList";
 
 export default function Root() {
   return (

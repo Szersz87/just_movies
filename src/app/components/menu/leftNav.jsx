@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../../shared/logo";
+import Logo from "../../../shared/Logo";
 import logoImg from "../../../assets/images/logo.jpg";
 
 function LeftNav () {
