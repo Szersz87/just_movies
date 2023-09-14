@@ -16,19 +16,21 @@
         flex-direction: row;
         justify-content: space-between;
         margin-left: 2rem;
-        width: 10%;
-        .cardBtnPlay {
-            padding: 1rem 2rem;
-            border: 1px solid black;
+        width: 13%;
+        padding: 1rem 2rem;
+        button {
+            display: flex;
+            justify-content: center;
             border-radius: 8px;
+            width: 5rem;
             cursor: pointer;
+        }
+        .cardBtnPlay {
+            background-color: #fff;
         }
         .cardBtnInfo {
             background-color: gray;
-            padding: 1rem 2rem;
-            border: 1px solid black;
-            border-radius: 8px;
-            cursor: pointer;
+            
 
         }
     }

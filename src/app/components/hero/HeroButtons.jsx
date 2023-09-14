@@ -1,6 +1,6 @@
 import React from "react";
 import { faCircleInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
-import Button from "../../../shared/Button";
+import Button from "../../../shared/ButtonWithIcon";
 
 
 function HeroButtons() {

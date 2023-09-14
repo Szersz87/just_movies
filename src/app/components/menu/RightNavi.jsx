@@ -12,7 +12,7 @@ const iconList = [faSearch, faUser, faBell, faInfo];
 function RightNav() {
   return (
     <div className="iconsContainer">
-      {iconList.map(ikona => <Icon src={ikona} /> )}
+      {iconList.map(icon => <Icon src={icon} /> )}
     </div>
   );
 }
