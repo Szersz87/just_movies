@@ -1,0 +1,38 @@
+.navBar {
+  background-color: #a52017;
+  color: white;
+  display: flex;
+  height: 10vh;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.images {
+  img {
+    max-height: 10vh;
+    width: auto;
+  }}
+.iconsContainer svg {
+    margin-right: 1rem;
+  }
+
+.menu {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  ul {
+    display: flex;
+    list-style-type: none;
+    li {
+      margin-left: 3rem;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
