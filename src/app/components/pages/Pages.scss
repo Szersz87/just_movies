@@ -1,0 +1,10 @@
+.BoxForMovies {
+  display: flex;
+  flex-wrap: wrap;
+  .Container {
+      flex: auto;
+      .movieList {
+      display: flex;
+    }
+  }
+}

@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
+import MovieListContinue from "../../../shared/MovieList";
+import MovieListPopular from "../../../shared/MovieList";
 
+const Movies = () => {
+  return(
+  <div className="BoxForMovies">
+    <MovieListContinue title="Continume to Watch" className="Container" />
+    <MovieListPopular title="Popular on JustMovies" className="Container" />
+  </div>);
+};
 
-
-export default function Movies() {
-  return <h1 style={{margin : 200, display : 'flex', justifyContent : 'center'}}>Ms</h1>
-}
+export default Movies;
