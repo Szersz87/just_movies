@@ -5,8 +5,8 @@ import MovieListPopular from "../../../shared/MovieList";
 const Movies = () => {
   return(
   <div className="BoxForMovies">
-    <MovieListContinue title="Continume to Watch" className="Container" />
-    <MovieListPopular title="Popular on JustMovies" className="Container" />
+    <MovieListContinue title="Continume to Watch"/>
+    <MovieListPopular title="Popular on JustMovies" />
   </div>);
 };
 

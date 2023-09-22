@@ -1,10 +1,20 @@
 .BoxForMovies {
   display: flex;
   flex-wrap: wrap;
+  h2 {
+    color: white;
+  }
   .Container {
-      flex: auto;
-      .movieList {
+    flex: auto;
+    background-color: black;
+    .movieList {
       display: flex;
+      img {
+        margin: 0.4rem;
+        border-radius: 5px;
+      }
     }
   }
 }
+
+

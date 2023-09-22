@@ -1,17 +1,16 @@
 import React from "react";
 import useMovies from "./Api";
 
-function MovieList({ title, className }) {
+function MovieList({ title }) {
   const movies = useMovies();
 
   return (
-    <div className={className}>
+    <div className="Container">
       <h2>{title}</h2>
       <div className="movieList">
         {movies.map((movie, index) => (
           <div key={index} className="movieTile">
             <img src={movie["im:image"][2].label} alt={movie["im:name"].label} />
-            <h3>{movie["im:name"].label}</h3>
           </div>
         ))}
       </div>
