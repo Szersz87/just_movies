@@ -1,8 +1,8 @@
 import React from "react";
 
-const Logo = ({ imageSrc }) => {
+const Logo = ({ imageSrc, onClick }) => {
   return (
-    <img src={imageSrc} alt="Logo" />
+    <img onClick={onClick} src={imageSrc} alt="Logo" />
   );
 };
 
