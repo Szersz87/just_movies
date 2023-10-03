@@ -1,9 +1,7 @@
 import React from "react";
-import LeftNav from "./LeftNav"
+import LeftNav from "./LeftNav";
 import NavMenu from "../pages/NavigationMenu";
-import RightNav from "./RightNavi"
-
-
+import RightNav from "./RightNavi";
 
 function Header() {
   return (

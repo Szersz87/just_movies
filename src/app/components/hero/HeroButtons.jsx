@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { faCircleInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../shared/ButtonWithIcon";
+import PreviewModal from "../../../shared/PreviewModal";
 
 function HeroButtons() {
-  function handleInfoClick() {
-    console.log('Info button clicked');
-    alert('Clicked')
-  };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const handlePlayClick = () => {
-    console.log('Play button clicked');
-    const youtubeTrailerURL = "https://www.youtube.com/watch?v=1bjfXYXHjFo"
-    
-    window.open(youtubeTrailerURL, "_blank")
-  };
+  function handleInfoClick() {
+    alert("Clicked");
+  }
+
+  function handlePlayClick() {
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+  const youtubeTrailerURL = "https://www.youtube.com/embed/1bjfXYXHjFo";
 
   return (
     <div className="cardBtns">
@@ -28,6 +32,11 @@ function HeroButtons() {
         className="cardBtnPlay"
         icon={faPlay}
         onClick={handlePlayClick}
+      />
+      <PreviewModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        videoUrl={youtubeTrailerURL}
       />
     </div>
   );

@@ -1,11 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Icon = ({ src }) => {
-  return (
-    <FontAwesomeIcon icon={src} />
-  );
+  return <FontAwesomeIcon icon={src} />;
 };
 
-export default Icon;
 
+Icon.propTypes = {
+  src: PropTypes.string.isRequired
+};
+
+
+export default Icon;

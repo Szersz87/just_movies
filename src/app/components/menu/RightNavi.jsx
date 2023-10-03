@@ -11,13 +11,15 @@ const iconList = [
   { id: "search", icon: faSearch },
   { id: "user", icon: faUser },
   { id: "bell", icon: faBell },
-  { id: "info", icon: faInfo }
+  { id: "info", icon: faInfo },
 ];
 
 function RightNav() {
   return (
     <div className="iconsContainer">
-      {iconList.map(iconData => <Icon key={iconData.id} src={iconData.icon} /> )}
+      {iconList.map((iconData) => (
+        <Icon key={iconData.id} src={iconData.icon} />
+      ))}
     </div>
   );
 }

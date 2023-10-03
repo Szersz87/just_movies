@@ -1,16 +1,24 @@
 import React from "react";
 import Hero from "../hero/Hero";
-import MovieListContinue from "../../../shared/MovieList";
-import MovieListPopular from "../../../shared/MovieList";
+import useMovies from "../../../shared/Api";
+import MovieList from "../../../shared/MovieList"
 
-export default function Home() {
+export default function HomePage() {
+  const thrillerMovies = useMovies("Action");
+  const comedyMovies = useMovies("Comedy");
+  const sciMovies = useMovies("Comedy");
+  const actionMovies = useMovies("Comedy");
+
   return (
-    <div>
+    <>
       <Hero />
       <div className="BoxForMovies">
-        <MovieListContinue title="Continume to Watch" />
-        <MovieListPopular title="Popular on JustMovies" />
+        <MovieList title="Action & Adventure" movies={actionMovies} />
+        <MovieList title="Comedy" movies={comedyMovies} />
+        <MovieList title="Thriller" movies={thrillerMovies} />
+        <MovieList title="Sci-Fi & Fantasy" movies={sciMovies} />
       </div>
-    </div>
+    </>
   );
 }
+

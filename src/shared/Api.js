@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-function useMovies() {
+function useMovies(genre) {
   const [movies, setMovies] = useState([]);
 
   const fetchMoviesData = () => {
-    fetch("https://itunes.apple.com/us/rss/topmovies/limit=20/json")
+    fetch("https://itunes.apple.com/us/rss/topmovies/limit=50/genre=${genre}/json")
       .then((response) => {
         return response.json();
       })
@@ -14,7 +14,7 @@ function useMovies() {
   };
   useEffect(() => {
     fetchMoviesData();
-  }, []);
+  }, [genre]);
   return movies;
 }
 

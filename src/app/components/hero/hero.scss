@@ -1,37 +1,37 @@
 .card {
-    background-image: url(../../../assets/images/racing-3415413_1280.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%vh;
-    height: 40vh;
-    opacity: 0.8;  
-    .cardText {
-        margin-left: 2rem;
-        width: 40vh;
-        font-size: 1.4rem;
-        color: black;
+  background-image: url(../../../assets/images/racing-3415413_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-top: -1.4rem;
+  width: 100%vh;
+  height: 40vh;
+  opacity: 0.8;
+  .cardText {
+    margin-left: 2rem;
+    width: 40vh;
+    font-size: 1.4rem;
+    color: black;
+  }
+  .cardBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2rem;
+    width: 13%;
+    padding: 1rem 2rem;
+    button {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 8px;
+      width: 5rem;
+      cursor: pointer;
     }
-    .cardBtns {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-left: 2rem;
-        width: 13%;
-        padding: 1rem 2rem;
-        button {
-            display: flex;
-            justify-content: center;
-            border-radius: 8px;
-            width: 5rem;
-            cursor: pointer;
-        }
-        .cardBtnPlay {
-            background-color: #fff;
-        }
-        .cardBtnInfo {
-            background-color: gray;
-            
-
-        }
+    .cardBtnPlay {
+      background-color: #fff;
     }
+    .cardBtnInfo {
+      background-color: gray;
+    }
+  }
 }

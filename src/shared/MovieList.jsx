@@ -1,16 +1,21 @@
 import React from "react";
-import useMovies from "./Api";
+import PropTypes from "prop-types";
 
-function MovieList({ title }) {
-  const movies = useMovies();
+function MovieList({ title, movies }) {
+  const filteredMovies = movies.filter((movie) => {
+    return movie.category.attributes.term === title;
+  });
 
   return (
     <div className="Container">
       <h2>{title}</h2>
       <div className="movieList">
-        {movies.map((movie, index) => (
+        {filteredMovies.map((movie, index) => (
           <div key={index} className="movieTile">
-            <img src={movie["im:image"][2].label} alt={movie["im:name"].label} />
+            <img
+              src={movie["im:image"][2].label}
+              alt={movie["im:name"].label}
+            />
           </div>
         ))}
       </div>
@@ -18,4 +23,10 @@ function MovieList({ title }) {
   );
 }
 
+MovieList.propTypes = {
+  title: PropTypes.string.isRequired,
+  movies: PropTypes.array.isRequired,
+};
+
 export default MovieList;
+

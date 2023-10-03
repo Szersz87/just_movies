@@ -1,7 +1,5 @@
-import React from 'react';
-
-
+import React from "react";
 
 export default function NewAndPopular() {
-    return <h1>NewAndPopular</h1>
-  }
+  return <h1>NewAndPopular</h1>;
+}

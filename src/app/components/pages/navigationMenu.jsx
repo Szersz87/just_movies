@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import React from 'react';
 
 export default function NavigationMenu() {
   return (
@@ -9,12 +10,6 @@ export default function NavigationMenu() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/series">Series</Link>
-          </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
             <Link to="/newAndPopular">New&Popular</Link>
           </li>
           <li>
@@ -23,9 +18,7 @@ export default function NavigationMenu() {
         </ul>
       </nav>
 
-
       <Outlet />
-      
     </>
   );
 }
