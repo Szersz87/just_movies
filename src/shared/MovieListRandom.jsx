@@ -1,9 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function MovieList({ title, movies }) {
+function MovieList({ title, movies, filterByCategory }) {
+  // Sprawdź, czy movies jest tablicą przed użyciem metody filter
   const filteredMovies = Array.isArray(movies)
-    ? movies.filter((movie) => movie.category.attributes.term === title)
+    ? filterByCategory
+      ? movies.filter((movie) => movie.category.attributes.term === title)
+      : movies
     : [];
 
   return (
@@ -26,6 +29,7 @@ function MovieList({ title, movies }) {
 MovieList.propTypes = {
   title: PropTypes.string.isRequired,
   movies: PropTypes.array.isRequired,
+  filterByCategory: PropTypes.bool,
 };
 
 export default MovieList;
