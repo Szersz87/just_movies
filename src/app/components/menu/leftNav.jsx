@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../../shared/Logo";
-import logoImg from "../../../assets/images/logo.jpg";
+import logoImg from "../../../assets/images/JUST MOVIES Logo - Original - 5000x5000.png";
 import { Link } from "react-router-dom";
 
 
