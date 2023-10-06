@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function MovieList({ title, movies, filterByCategory }) {
-  // Sprawdź, czy movies jest tablicą przed użyciem metody filter
   const filteredMovies = Array.isArray(movies)
     ? filterByCategory
       ? movies.filter((movie) => movie.category.attributes.term === title)

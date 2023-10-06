@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import AddToListButton from "../shared/MyListButton"
 
 function MovieList({ title, movies }) {
   const filteredMovies = Array.isArray(movies)
@@ -16,6 +17,7 @@ function MovieList({ title, movies }) {
               src={movie["im:image"][2].label}
               alt={movie["im:name"].label}
             />
+            <AddToListButton movie={movie} />
           </div>
         ))}
       </div>

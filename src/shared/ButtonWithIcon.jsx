@@ -13,7 +13,7 @@ function Button({ title, className, icon, onClick }) {
 Button.propTypes = {
   title: PropTypes.string.isRequired, 
   className: PropTypes.string,        
-  icon: PropTypes.string.isRequired,  
+  icon: PropTypes.string.optional,  
   onClick: PropTypes.func.isRequired  
 };
 
