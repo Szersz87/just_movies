@@ -15,7 +15,6 @@ function useMovies(genre, getRandom) {
         return response.json();
       })
       .then((data) => {
-        console.log("Data from API:", data)
         setMovies(data.feed.entry);
       });
   };

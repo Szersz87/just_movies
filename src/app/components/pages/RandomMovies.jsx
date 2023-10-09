@@ -1,5 +1,5 @@
 import React from "react";
-import MovieList from "../../../shared/MovieListRandom";
+import MovieList from "../../../shared/MovieList/MovieListRandom";
 import useMovies from "../../../shared/Api";
 
 export default function RandomMovies() {

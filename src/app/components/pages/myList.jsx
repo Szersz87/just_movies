@@ -1,20 +1,18 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function MyList() {
   const myList = JSON.parse(localStorage.getItem("myList")) || [];
-
   return (
     <div className="Container">
       <h2>My List</h2>
       <div className="movieList">
-        {myList.map((movie, index) => (
-          <div key={index} className="movieTile">
-            {movie && movie["im:image"] && movie["im:image"][2] && (
+        {myList.map((movie) => (
+          <div key={uuidv4()} className="movieTile">
             <img
-              src={movie["im:image"][2].label}
-              alt={movie["im:name"].label}
+              src={movie.imageUrl}
+              alt={movie.title}
             />
-             )}
           </div>
         ))}
       </div>

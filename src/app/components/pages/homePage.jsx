@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../hero/Hero";
 import useMovies from "../../../shared/Api";
-import MovieList from "../../../shared/MovieList";
+import MovieList from "../../../shared/MovieList/MovieList";
 
 export default function HomePage() {
   const thrillerMovies = useMovies("Thriller");
