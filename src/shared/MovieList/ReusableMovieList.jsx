@@ -20,7 +20,7 @@ export default function ReusableMovieList ({title, movies, filterByCategory}) {
               src={movie["im:image"][2].label}
               alt={movie["im:name"].label}
             />
-            <AddToListButton movie={movie} />
+              <AddToListButton movie={movie} />
           </div>
         ))}
       </div>
