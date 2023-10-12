@@ -8,6 +8,7 @@
   opacity: 0.8;
   .cardText {
     margin-left: 2rem;
+    padding: 2rem;
     width: 40vh;
     font-size: 1.4rem;
     color: black;
@@ -18,7 +19,7 @@
     justify-content: space-between;
     margin-left: 2rem;
     width: 13%;
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
     button {
       display: flex;
       justify-content: space-evenly;
