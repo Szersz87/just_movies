@@ -11,8 +11,8 @@ export default function Root() {
       <Header />
       <Routes>
         <Route path="/just_movies" element={<HomePage />} />
-        <Route path="/randomMovies" element={<RandomMovies />} />
-        <Route path="/MyList" element={<MyList />} />
+        <Route path="/randomMovies/just_movies" element={<RandomMovies />} />
+        <Route path="/MyList/just_movies" element={<MyList />} />
       </Routes>
     </Router>
   );
