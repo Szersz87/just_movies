@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Icon from "./Icon";
 
-function Button({ title, className, icon, onClick }) {
+function ButtonWithIcon({ title, className, icon, onClick }) {
   return (
     <button className={className} onClick={onClick}>
       <Icon src={icon} />
@@ -10,12 +10,12 @@ function Button({ title, className, icon, onClick }) {
     </button>
   );
 }
-Button.propTypes = {
-  title: PropTypes.string.isRequired, 
+ButtonWithIcon.propTypes = {
+  title: PropTypes.string, 
   className: PropTypes.string,        
   icon: PropTypes.string.optional,  
   onClick: PropTypes.func.isRequired  
 };
 
 
-export default Button;
+export default ButtonWithIcon;

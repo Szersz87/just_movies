@@ -1,5 +1,6 @@
 .BoxForMovies {
   display: flex;
+  // width: 100%vh;
   flex-wrap: wrap;
   h2 {
     color: white;
@@ -9,6 +10,7 @@
     background-color: black;
     .movieList {
       display: flex;
+   
       .movieTile {
         position: relative;
         text-align: center;
@@ -50,4 +52,8 @@
       }
     }
   }
+}
+.test {
+  display: flex;
+  max-width: 500px;
 }
