@@ -1,36 +1,34 @@
-import { useState } from "react";
+import React from "react";
+import AddToListButton from "./MyListButton"
+import { Virtual } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { v4 as uuidv4 } from 'uuid';
 import PropTypes from "prop-types";
-import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
-import ReusableMovieList from "./MovieList/ReusableMovieList"
 
-export function ImageSlider({ imageUrls }) {
+import 'swiper/css';
+import 'swiper/css/virtual';
 
-    function showNextImage() {
-        setImageIndex(index => {
-        if (index === imageUrls.lengh - 1) return 0 
-        return index + 1
-    })
-    function showPrevImage() {
-        setImageIndex(index => {
-            if (index === 0) return imageUrls.langth - 1 
-            return index - 1
-    })
-}
+export default function ImageSlider({slides}) {
+ 
 
   return (
+    
+<Swiper modules={[Virtual]} spaceBetween={5} slidesPerView={3} virtual>
+  {slides.map((movie) => (
+    <SwiperSlide key={uuidv4()}>
+      <div className="movieTile">
+        <a href={movie.link[1].attributes.href} target="_blank" rel="noreferrer">
+          <img src={movie["im:image"][2].label} alt={movie["im:name"].label} />
+        </a>
+        <AddToListButton movie={movie} />
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
 
-    <div>
-      <ReusableMovieList />
-      <button onClick={showPrevImage} className="ImgSlider">
-        <ArrowBigLeft />
-      </button>
-      <button onClick={showNextImage} className="ImgSlider">
-        <ArrowBigRight />
-      </button>
-    </div>
   );
-  }}
+}
 
 ImageSlider.propTypes = {
-    imageUrls: PropTypes.string
+    slides: PropTypes.array.isRequired
 }

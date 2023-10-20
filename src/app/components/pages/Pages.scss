@@ -7,13 +7,17 @@
   }
   .Container {
     flex: auto;
+    max-width: 100%;
+    
     background-color: black;
     .movieList {
       display: flex;
-   
+      
       .movieTile {
         position: relative;
         text-align: center;
+        left: 2.2rem;
+        right: 2.2rem;
         width: 8rem;
         img {
           margin: 0.4rem;
@@ -52,8 +56,4 @@
       }
     }
   }
-}
-.test {
-  display: flex;
-  max-width: 500px;
 }
