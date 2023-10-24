@@ -4,7 +4,7 @@ import ReactModal from "react-modal";
 import "./App.scss";
 import "./components/hero/Hero.scss";
 import "./components/pages/Pages.scss";
-import "../shared/Modal.scss";
+
 
 ReactModal.setAppElement("#root");
 

@@ -1,6 +1,6 @@
 .BoxForMovies {
   display: flex;
-  // width: 100%vh;
+  flex-direction: column;
   flex-wrap: wrap;
   h2 {
     color: white;
@@ -8,11 +8,10 @@
   .Container {
     flex: auto;
     max-width: 100%;
-    
     background-color: black;
     .movieList {
-      display: flex;
-      
+     
+     
       .movieTile {
         position: relative;
         text-align: center;

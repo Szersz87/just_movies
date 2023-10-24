@@ -4,10 +4,10 @@ function useMovies(genre, getRandom) {
   const [movies, setMovies] = useState([]);
 
   const fetchMoviesData = () => {
-    let apiUrl = "https://itunes.apple.com/us/rss/topmovies/limit=50/json";
+    let apiUrl = "https://itunes.apple.com/us/rss/topmovies/limit=80/json";
     if (genre) {
       apiUrl =
-        "https://itunes.apple.com/us/rss/topmovies/limit=50/genre=${genre}/json";
+        "https://itunes.apple.com/us/rss/topmovies/limit=80/genre=${genre}/json";
     }
 
     fetch(apiUrl)

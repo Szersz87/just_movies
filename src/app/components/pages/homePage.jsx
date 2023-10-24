@@ -4,10 +4,10 @@ import useMovies from "../../../shared/Api";
 import MovieList from "../../../shared/MovieList/MovieList";
 
 export default function HomePage() {
-  const thrillerMovies = useMovies("Thriller");
-  const comedyMovies = useMovies("Comedy");
-  const sciMovies = useMovies("ScinceFiction");
   const actionMovies = useMovies("Action");
+  const comedyMovies = useMovies("Comedy");
+  const thrillerMovies = useMovies("Thriller");
+  const sciMovies = useMovies("ScinceFiction");
 
   return (
     <>
