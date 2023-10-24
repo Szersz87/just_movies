@@ -8,13 +8,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function ReusableMovieList({ title, movies, filterByCategory }) {
-  const filteredMovies = Array.isArray(movies)
-    ? filterByCategory
-      ? movies.filter((movie) => movie.category.attributes.term === title)
-      : movies
-    : [];
-
+export default function ReusableMovieList({ title, movies }) {
+  let filteredMovies;
+  
+  if (title === "Random Movies") {
+    filteredMovies = movies;
+  } else {
+    filteredMovies = Array.isArray(movies)
+    ? movies.filter((movie) => movie.category.attributes.term === title) : movies;
+  }
   return (
     <div className="Container">
       <h2>{title}</h2>
@@ -53,5 +55,5 @@ export default function ReusableMovieList({ title, movies, filterByCategory }) {
 ReusableMovieList.propTypes = {
   title: PropTypes.string.isRequired,
   movies: PropTypes.array.isRequired,
-  filterByCategory: PropTypes.string,
+  
 };

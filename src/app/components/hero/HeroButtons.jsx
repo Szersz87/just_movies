@@ -34,7 +34,7 @@ function HeroButtons() {
         onClick={handlePlayClick}
       />
       <PreviewModal
-        className="modal"
+        // className="modal"
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         videoUrl={youtubeTrailerURL}

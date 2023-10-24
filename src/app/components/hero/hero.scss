@@ -36,9 +36,26 @@
     }
   }
 }
-.ytp-cued-thumbnail-overlay-image {
+.overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% -50%);
+  top: 20%;
+  left: 20%;
+  background-color: rgba(255, 255, 255, 0.75)
 }
+.modal {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  border: 1px solid #000;
+  background: #000;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 5rem;
+  z-index: 5;
+  transition: opacity 0.3s;
+  .modal:hover {
+    opacity: 0.8; 
+  }
+}
+

@@ -9,17 +9,18 @@ function PreviewModal({ isOpen, onRequestClose, videoUrl }) {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Video Modal"
-      className="Modal"
-      overlayClassName="Overlay"
+      className="modal"
+      overlayClassName="overlay"
     >
       <iframe
-        width="560"
-        height="315"
+        width="860"
+        height="515"
         src={videoUrl}
         title="YouTube Video"
         allowFullScreen
       ></iframe>
       <button onClick={onRequestClose}>Close</button>
+   
     </ReactModal>
   );
 }
