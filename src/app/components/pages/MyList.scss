@@ -1,0 +1,26 @@
+.myListContainer {
+  background-image: url(../../../assets/images/movie-146704_1280.png);
+  background-position: center;
+  background-size: contain;
+  padding: 4rem;
+  opacity: 0.8;
+  .title {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .description {
+    display: flex;
+    text-align: center;
+
+    .items {
+      margin: 2rem;
+      max-width: 40rem;
+    }
+    .image {
+      position: relative;
+      width: 20%;
+      height: 40%;
+    }
+  }
+}

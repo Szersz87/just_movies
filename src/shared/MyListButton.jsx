@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "../shared/ButtonWithIcon";
+import ButtonWithIcon from "../shared/ButtonWithIcon";
 import PropTypes from "prop-types";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import SetItem from "./SetItem"
@@ -27,6 +27,8 @@ function MyListButton({ movie }) {
       const movieToAdd = {
         title: movie["im:name"].label,
         imageUrl: movie["im:image"][2].label,
+        description: movie.summary.label,
+        href: movie.link[1].attributes.href
       };
       const myList = GetItem("myList") || [];
       myList.push(movieToAdd);
@@ -38,7 +40,7 @@ function MyListButton({ movie }) {
   };
 
   return (
-    <Button
+    <ButtonWithIcon
       icon={isLiked ? faHeart : faHeartBroken}
       className={`AddMeToList ${isLiked ? "liked" : ""}`}
       onClick={handleAddToListClick}
