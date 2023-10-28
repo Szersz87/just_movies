@@ -1,14 +1,21 @@
 .BoxForMovies {
   display: flex;
+  background-color: black;
   flex-direction: column;
   flex-wrap: wrap;
+  height: 100%vh;
   h2 {
     color: white;
   }
   .Container {
     flex: auto;
+    height: 100%;
     max-width: 100%;
-    background-color: black;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+    h2 {
+      padding: 2rem;
+    }
     .movieList {
      
      

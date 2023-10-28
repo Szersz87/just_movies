@@ -1,15 +1,17 @@
 .myListContainer {
-  background-image: url(../../../assets/images/movie-146704_1280.png);
-  background-position: center;
-  background-size: contain;
+  background-color: black;
   padding: 4rem;
-  opacity: 0.8;
+  height: 100%vh;
+  padding-top: 5rem;
+    padding-bottom: 10rem;
   .title {
+    color: #fff;
     margin-bottom: 3rem;
     font-size: 2rem;
     font-weight: bold;
-  }
-  .description {
+}
+.description {
+      color: #fff;
     display: flex;
     text-align: center;
 

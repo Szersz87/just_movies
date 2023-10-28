@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "../app/components/menu/Header";
 import HomePage from "../app/components/pages/HomePage";
 import RandomMovies from "../app/components/pages/RandomMovies";
-import MyList from "../app/components/pages/MyList";
+import FavouriteList from "../app/components/pages/FavouriteList";
 
 export default function Root() {
   return (
@@ -12,7 +12,7 @@ export default function Root() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/randomMovies" element={<RandomMovies />} />
-        <Route path="/MyList" element={<MyList />} />
+        <Route path="/FavouriteList" element={<FavouriteList />} />
       </Routes>
     </Router>
   );

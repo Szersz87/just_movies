@@ -7,7 +7,7 @@ function HeroButtons() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function handleInfoClick() {
-    alert("Clicked");
+    alert("Here should be description of this movie, but i didn't put it. Sorry ;)");
   }
 
   function handlePlayClick() {

@@ -10,10 +10,10 @@ export default function NavigationMenu() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/randomMovies">RandomMovies</Link>
+            <Link to="/randomMovies">Random Movies</Link>
           </li>
           <li>
-            <Link to="/myList">MyList</Link>
+            <Link to="/favouriteList">Favourite List</Link>
           </li>
         </ul>
       </nav>
