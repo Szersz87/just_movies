@@ -12,7 +12,7 @@
     height: 100%;
     max-width: 100%;
     padding-top: 5rem;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
     h2 {
       padding: 2rem;
     }
@@ -26,7 +26,6 @@
         right: 2.2rem;
         width: 8rem;
         img {
-          margin: 0.4rem;
           border-radius: 5px;
           max-width: 100%;
           height: auto;
@@ -35,7 +34,6 @@
         button {
           position: absolute;
           right: 1rem;
-          top: 1rem;
           background: none;
           font-size: 1rem;
           cursor: pointer;

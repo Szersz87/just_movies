@@ -4,6 +4,7 @@ import Header from "../app/components/menu/Header";
 import HomePage from "../app/components/pages/HomePage";
 import RandomMovies from "../app/components/pages/RandomMovies";
 import FavouriteList from "../app/components/pages/FavouriteList";
+import MovieDetails from "../app/components/pages/MovieDetails";
 
 export default function Root() {
   return (
@@ -13,6 +14,7 @@ export default function Root() {
         <Route path="/" element={<HomePage />} />
         <Route path="/randomMovies" element={<RandomMovies />} />
         <Route path="/FavouriteList" element={<FavouriteList />} />
+        <Route path="/movie/:title" element={<MovieDetails />} />
       </Routes>
     </Router>
   );

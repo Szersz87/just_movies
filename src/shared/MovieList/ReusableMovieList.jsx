@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AddToListButton from "../MyListButton";
 import PropTypes from "prop-types";
 import { Navigation, Pagination } from "swiper/modules";
@@ -17,6 +18,7 @@ export default function ReusableMovieList({ title, movies }) {
     filteredMovies = Array.isArray(movies)
     ? movies.filter((movie) => movie.category.attributes.term === title) : movies;
   }
+  
   return (
     <div className="Container">
       <h2>{title}</h2>
@@ -32,17 +34,20 @@ export default function ReusableMovieList({ title, movies }) {
             filteredMovies.map((movie) => (
               <SwiperSlide key={uuidv4()}>
                 <div key={uuidv4()} className="movieTile">
-                  <a
-                    key={uuidv4()}
-                    href={movie.link[1].attributes.href}
-                    target="_blank"
-                    rel="noreferrer"
+                {console.log("Dane do przekazania:", movie)};
+                <Link
+                    to={{
+                      pathname: `/movie/${encodeURIComponent(movie["im:name"].label)}`,
+                      state: {
+                        movieData: movie,
+                      },
+                    }}
                   >
                     <img
                       src={movie["im:image"][2].label}
                       alt={movie["im:name"].label}
                     />
-                  </a>
+                  </Link>
                   <AddToListButton movie={movie} />
                 </div>
               </SwiperSlide>
