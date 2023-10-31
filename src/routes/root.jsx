@@ -14,7 +14,7 @@ export default function Root() {
         <Route path="/" element={<HomePage />} />
         <Route path="/randomMovies" element={<RandomMovies />} />
         <Route path="/FavouriteList" element={<FavouriteList />} />
-        <Route path="/movie/:title" element={<MovieDetails />} />
+        <Route path="/movie/MovieDetails" element={<MovieDetails />} />
       </Routes>
     </Router>
   );

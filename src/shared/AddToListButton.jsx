@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import ButtonWithIcon from "../shared/ButtonWithIcon";
+import ButtonWithIcon from "./ButtonWithIcon";
 import PropTypes from "prop-types";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
-import SetItem from "./SetItem"
-import GetItem from "./GetItem"
+import SetItem from "./SetItem";
+import GetItem from "./GetItem";
 
-function MyListButton({ movie }) {
+function AddToListButton({ movie }) {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     const myList = GetItem("myList") || [];
     const isMovieInList = myList.some(
-      (item) => item.title === movie["im:name"].label
+      (item) => item.title === movie["im:name"].label,
     );
     setIsLiked(isMovieInList);
   }, [movie]);
@@ -20,7 +20,7 @@ function MyListButton({ movie }) {
     if (isLiked) {
       const myList = GetItem("myList") || [];
       const updatedList = myList.filter(
-        (item) => item.title !== movie["im:name"].label
+        (item) => item.title !== movie["im:name"].label,
       );
       SetItem("myList", updatedList);
     } else {
@@ -28,14 +28,13 @@ function MyListButton({ movie }) {
         title: movie["im:name"].label,
         imageUrl: movie["im:image"][2].label,
         description: movie.summary.label,
-        href: movie.link[1].attributes.href
+        href: movie.link[1].attributes.href,
       };
       const myList = GetItem("myList") || [];
       myList.push(movieToAdd);
       SetItem("myList", myList);
     }
 
-    
     setIsLiked(!isLiked);
   };
 
@@ -48,8 +47,8 @@ function MyListButton({ movie }) {
   );
 }
 
-MyListButton.propTypes = {
+AddToListButton.propTypes = {
   movie: PropTypes.object.isRequired,
 };
 
-export default MyListButton;
+export default AddToListButton;
