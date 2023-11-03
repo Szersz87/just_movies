@@ -3,6 +3,7 @@
   color: white;
   display: flex;
   height: 10vh;
+  width: 100%vh;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -11,6 +12,7 @@
   img {
     max-height: 10vh;
     width: auto;
+    
   }
 }
 .iconsContainer svg {

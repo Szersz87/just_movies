@@ -27,9 +27,9 @@ function MovieDetails() {
             <h2>{movieData["im:name"].label}</h2>
             <h3>{movieData.category.attributes.term}</h3>
             <div className="DetailsDescription">
-            <p>{movieData.summary.label}</p>
             <img src={movieData["im:image"][2].label}
              alt={movieData["im:name"].label} />
+            <p>{movieData.summary.label}</p>
              </div>
              <div className="DetailsButton">
              <AddToListButton movie={movieData} />

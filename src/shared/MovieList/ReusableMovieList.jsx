@@ -26,8 +26,27 @@ export default function ReusableMovieList({ title, movies }) {
       <div className="movieList">
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={2}
-          slidesPerView={8}
+          spaceBetween={1}
+          breakpoints={{
+            
+            640: {
+              width: 640,
+              slidesPerView: 2,
+            },
+            
+            768: {
+              width: 768,
+              slidesPerView: 3,
+            },
+            1200: {
+              width: 1200,
+              slidesPerView: 5,
+            },
+            1800: {
+              width: 1900,
+              slidesPerView: 9,
+            }
+          }}
           navigation
           pagination={{ clickable: true }}
         >

@@ -5,6 +5,7 @@ import "./App.scss";
 import "./components/hero/Hero.scss";
 import "./components/pages/Pages.scss";
 import "./components/pages/FavouriteList.scss";
+import "./components/pages/MovieDetails.scss";
 
 
 ReactModal.setAppElement("#root");
