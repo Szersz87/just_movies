@@ -22,14 +22,16 @@ function HeroButtons() {
   return (
     <div className="cardBtns">
       <Button
-        title="Info"
         className="cardBtnInfo"
+        buttonContent="buttonContent"
+        title="Info"
         icon={faCircleInfo}
         onClick={handleInfoClick}
-      />
+        />
       <Button
-        title="Play"
         className="cardBtnPlay"
+        buttonContent="buttonContent"
+        title="Play"
         icon={faPlay}
         onClick={handlePlayClick}
       />
