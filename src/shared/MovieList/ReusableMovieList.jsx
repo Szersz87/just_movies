@@ -58,7 +58,6 @@ export default function ReusableMovieList({ title, movies }) {
             filteredMovies.map((movie) => (
               <SwiperSlide key={uuidv4()}>
                 <div key={uuidv4()} className="movieTile">
-                  {console.log("Dane do przekazania:", movie)};
                   <Link to="/movie/MovieDetails" state={{ movieData: movie }}>
                     <img
                       src={movie["im:image"][2].label}

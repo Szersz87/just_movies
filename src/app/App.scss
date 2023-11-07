@@ -39,3 +39,21 @@
     }
   }
 }
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .images {
+    img {
+      width: 8rem;
+    }
+  }
+  .iconsContainer {
+    display: none;
+  }
+  .menu {
+    ul {
+      li{
+        margin-left: 0.8rem;
+        font-size: 0.4rem;
+      }
+    }
+  }
+}

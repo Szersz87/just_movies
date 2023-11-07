@@ -13,8 +13,6 @@ function PreviewModal({ isOpen, onRequestClose, videoUrl }) {
       overlayClassName="overlay"
     >
       <iframe
-        width="860"
-        height="515"
         src={videoUrl}
         title="YouTube Video"
         allowFullScreen

@@ -7,7 +7,7 @@
   width: 100vw;
   height: 40vh;
   background-color: black;
-  
+
   .overlayImg {
     position: absolute;
     top: 0;
@@ -15,7 +15,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    
   }
   .cardText {
     position: relative;
@@ -34,7 +33,7 @@
     margin-left: 2rem;
     width: 13%;
     padding: 0rem 2rem;
-    
+
     button {
       display: flex;
       text-transform: uppercase;
@@ -43,9 +42,11 @@
       z-index: 1;
       background: none;
       overflow: hidden;
-      transition: .5s;
+      transition: 0.5s;
       &:hover {
-        box-shadow: 2px 3px 0 0 rgba(255, 255, 255, .8), inset 11px 6px 10px rgba(0, 0, 0, .2);
+        box-shadow:
+          2px 3px 0 0 rgba(255, 255, 255, 0.8),
+          inset 11px 6px 10px rgba(0, 0, 0, 0.2);
       }
       .buttonContent {
         display: flex;
@@ -54,12 +55,10 @@
         font-size: 1rem;
         height: 3rem;
         width: 5rem;
-     } 
+      }
     }
     .cardBtnPlay {
-      
       color: yellow;
-      
     }
     .cardBtnInfo {
       color: white;
@@ -68,22 +67,45 @@
 }
 .overlay {
   position: absolute;
-  top: 10%;
-  left: 10%;
-  right: 10%;
+  top: 0;
   background-color: rgba(255, 255, 255, 0.75);
 }
 .modal {
   position: absolute;
+  padding-top: 5rem;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
   border: 1px solid #000;
   background: #000;
-  overflow: auto;
-  border-radius: 4px;
   outline: none;
-  padding: 5rem;
   z-index: 5;
-  transition: opacity 0.3s;
-  .modal:hover {
-    opacity: 0.8;
+  iframe {
+    width: 860px;
+    height: 515px;
   }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .card {
+    width: 100vw;
+    height: 100%;
+    .cardBtns {
+      position: relative;
+      bottom: 2rem;
+      left: 4rem;
+      width: 40%;
+
+    }
+    .cardText {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    iframe {
+    width: 310px;
+    height: 170px;
+  }}
 }
