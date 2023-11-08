@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
   }
   .cardText {
     position: relative;
@@ -22,6 +22,7 @@
     padding: 2rem;
     width: 50%;
     font-size: 1.4rem;
+    font-weight: 400;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -37,10 +38,10 @@
     button {
       display: flex;
       text-transform: uppercase;
-      border: none;
       cursor: pointer;
       z-index: 1;
-      background: none;
+      background: white;
+      color: black;
       overflow: hidden;
       transition: 0.5s;
       &:hover {
@@ -57,12 +58,12 @@
         width: 5rem;
       }
     }
-    .cardBtnPlay {
-      color: yellow;
-    }
-    .cardBtnInfo {
-      color: white;
-    }
+    // .cardBtnPlay {
+    //   color: yellow;
+    // }
+    // .cardBtnInfo {
+    //   color: white;
+    // }
   }
 }
 .overlay {

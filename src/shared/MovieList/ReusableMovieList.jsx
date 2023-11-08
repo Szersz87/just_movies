@@ -45,11 +45,7 @@ export default function ReusableMovieList({ title, movies }) {
               slidesPerView: 5,
               spaceBetween: 30
             },
-            1800: {
-              width: 1900,
-              slidesPerView: 9,
-              spaceBetween: 40
-            }
+            
           }}
           navigation
           pagination={{ clickable: true }}

@@ -12,7 +12,6 @@
   img {
     max-height: 10vh;
     width: auto;
-    
   }
 }
 .iconsContainer svg {
@@ -20,15 +19,18 @@
 }
 
 .menu {
-  display: flex;
-  align-items: center;
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 1.3rem;
   font-weight: bold;
+
   ul {
     display: flex;
     list-style-type: none;
     li {
-      margin-left: 3rem;
+      margin-left: 4rem;
       a {
         text-decoration: none;
         color: white;
@@ -50,7 +52,7 @@
   }
   .menu {
     ul {
-      li{
+      li {
         margin-left: 0.8rem;
         font-size: 0.4rem;
       }

@@ -2,9 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import AddToListButton from "../../../shared/AddToListButton";
 import PropTypes from "prop-types";
-import Icon from "../../../shared/Icon";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-
+import ButtonWithIcon from "../../../shared/ButtonWithIcon";
 
 function MovieDetails() {
   let { state } = useLocation();
@@ -26,11 +25,14 @@ function MovieDetails() {
         <p className="description">{movieData.summary.label}</p>
       </div>
       <div className="iframeContainer">
-        <Icon src={faPlay} className="iconIframe"/>
-        <iframe 
-        src={movieData.link[1].attributes.href}
-        className="iframe"
-        allow="fullscreen"></iframe>
+        <ButtonWithIcon icon={faPlay} className="iconIframe" buttonContent="icon"/>
+        <div className="overlayIframe"></div>
+        <iframe
+          src={movieData.link[1].attributes.href}
+          className="iframe"
+        >
+          
+        </iframe>
       </div>
     </div>
   );
