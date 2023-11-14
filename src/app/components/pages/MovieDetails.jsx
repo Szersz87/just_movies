@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import AddToListButton from "../../../shared/AddToListButton";
 import PropTypes from "prop-types";
@@ -9,6 +9,13 @@ function MovieDetails() {
   let { state } = useLocation();
 
   const movieData = state.movieData;
+
+  const [showIframe, setShowIframe] = useState(false);
+
+  const handlePlayClick = () => {
+    
+    setShowIframe(!showIframe);
+  };
 
   return (
     <div className="DetailsContainer">
@@ -24,15 +31,25 @@ function MovieDetails() {
         </div>
         <p className="description">{movieData.summary.label}</p>
       </div>
-      <div className="iframeContainer">
-        <ButtonWithIcon icon={faPlay} className="iconIframe" buttonContent="icon"/>
-        <div className="overlayIframe"></div>
+      <div className={`iframeContainer ${showIframe ? 'showIframe' : ''}`}>
+        <ButtonWithIcon 
+        icon={faPlay} 
+        className="iconIframe" 
+        buttonContent="icon" 
+        onClick={handlePlayClick}
+        />
+          <div className="overlayIframe"></div>
+        {showIframe && (
+<>
         <iframe
-          src={movieData.link[1].attributes.href}
-          className="iframe"
+        src={movieData.link[1].attributes.href}
+        className="iframe"
+        allowFullScreen
         >
           
         </iframe>
+        </>
+          )}
       </div>
     </div>
   );
@@ -42,4 +59,5 @@ export default MovieDetails;
 
 MovieDetails.propTypes = {
   movieData: PropTypes.object,
+  
 };
