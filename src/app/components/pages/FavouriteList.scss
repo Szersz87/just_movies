@@ -49,17 +49,17 @@
   .description {
         color: #fff;
       display: flex;
-      flex-wrap: wrap;
+      align-items: flex-start;
   
       .items {
-        display: inline-block;
-        margin: 2rem;
+        display: flex;
+        text-align: end;
         
       }
       .image {
-        position: relative;
-        width: 20%;
-        height: 40%;
+        position: block;
+        margin-right: 2rem;
+        
         img {
           width: 120px;
         }
