@@ -1,10 +1,23 @@
 import { Outlet, Link } from "react-router-dom";
-import React from 'react';
+import React, { useState } from 'react';
+import Hamburger from '../pages/HamburgerNav'
 
 export default function NavigationMenu() {
+
+  const [isHamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () =>{
+    setHamburgerOpen(!isHamburgerOpen)
+    console.log("Hamburger clicked. State:", isHamburgerOpen);
+  }
   return (
     <>
-      <nav className="menu">
+      <nav className={`webMenu ${isHamburgerOpen ? 'hamburgerOpen' : ''}`}>
+        <div className="hamburger" onClick={toggleHamburger}>
+          
+          <Hamburger />
+        </div>
+        
         <ul>
           <li>
             <Link to="/">Home</Link>

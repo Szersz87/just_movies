@@ -8,7 +8,7 @@ export default function RandomMovies() {
   const randomMovies = getRandomMovies(10);
   return (
     <>
-      <div className="BoxForMovies">
+      <div className="BoxForRandomMovies">
         <MovieList title="Random Movies" movies={randomMovies} />
       </div>
     </>

@@ -29,10 +29,10 @@ export default function ReusableMovieList({ title, movies }) {
           spaceBetween={10}
           breakpoints={{
             
-            640: {
-              width: 640,
-              slidesPerView: 3,
-              spaceBetween: 10
+            370: {
+              width: 370,
+              slidesPerView: 2,
+              spaceBetween: 0
             },
             
             768: {

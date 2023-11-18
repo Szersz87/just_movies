@@ -1,4 +1,4 @@
-.BoxForMovies {
+.BoxForRandomMovies {
   display: flex;
   background-color: black;
   flex-direction: column;
@@ -14,7 +14,7 @@
       padding: 2rem;
     }
     .movieList {
-      
+      height: 100vh;
       .movieTile {
         position: relative;
         text-align: center;
@@ -22,14 +22,13 @@
         left: 2.2rem;
         right: 2.2rem;
         width: 8rem;
-        
+
         img {
           border-radius: 5px;
           width: 170px;
           transition: 0.8s;
         }
         button {
-
           position: absolute;
           top: 1rem;
           right: 0rem;
@@ -50,30 +49,28 @@
 
         .AddMeToList:hover {
           font-size: 4rem;
-        
         }
         &:hover img {
           filter: brightness(0.2);
         }
-       
       }
     }
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .swiper-container {
     width: 100vw;
   }
-  .BoxForMovies {
+  .BoxForRandomMovies {
     .Container {
-      .movieList {
+        .movieList {
+          margin-top: 5rem;
         .movieTile {
           height: 10rem;
           width: 5rem;
           right: 1rem;
-          img{
+          img {
             width: 100px;
           }
         }
@@ -81,5 +78,3 @@
     }
   }
 }
-
-
