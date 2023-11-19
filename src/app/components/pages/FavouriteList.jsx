@@ -28,7 +28,7 @@ export default function MyList() {
                   <div className="image">
                     <img src={movie.imageUrl} alt={movie.title} />
                   </div>
-                  <div className="items">
+                  <div className="text">
                     <h3>{movie.description ? movie.description : "Description will be added soon ;)"}</h3>
                   </div>
                 </div>

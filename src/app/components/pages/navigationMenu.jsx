@@ -8,7 +8,6 @@ export default function NavigationMenu() {
 
   const toggleHamburger = () =>{
     setHamburgerOpen(!isHamburgerOpen)
-    console.log("Hamburger clicked. State:", isHamburgerOpen);
   }
   return (
     <>
@@ -17,7 +16,7 @@ export default function NavigationMenu() {
           
           <Hamburger />
         </div>
-        
+        <div className="overlayBurgerMenu"></div>
         <ul>
           <li>
             <Link to="/">Home</Link>

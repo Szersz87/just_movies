@@ -7,6 +7,7 @@
   padding: 4rem;
   padding-top: 5rem;
     padding-bottom: 10rem;
+    height: 100vh;
   .title {
     color: #fff;
     margin-bottom: 3rem;
@@ -47,18 +48,19 @@
       font-weight: bold;
   }
   .description {
-        color: #fff;
-      display: flex;
-      align-items: flex-start;
-  
-      .items {
-        display: flex;
-        text-align: end;
+        display: block;
+        float: left;
+      
+      .text {
+        position: relative;
+        
+        
         
       }
       .image {
-        position: block;
-        margin-right: 2rem;
+        float: left;
+        margin-right: 4rem;
+        
         
         img {
           width: 120px;

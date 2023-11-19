@@ -1,6 +1,6 @@
 .DetailsContainer {
   margin-top: -1.3rem;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   color: white;
   h2 {
@@ -99,25 +99,33 @@
     }
   }
 }
-@media screen and (min-width: 375px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .DetailsContainer {
+    margin-top: 0rem;
+    width: 100vw;
+    overflow-y: auto;
+    
   h2 {
-    padding-left: 2rem;
+    padding-left: 1rem;
     padding-top: 2rem;
     font-size: 1.1rem;
   }
   h3 {
-    padding-left: 2rem;
+    padding-left: 1rem;
     font-size: 0.9rem;
   }
     .DetailsDescription {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 2rem;
+      display: block;
+      float: left;
+      padding-left: 1rem;
+      padding-top: 2rem;
+      padding-right: 1rem;
       
       .DetailsImg {
+    
+        float: left;
         img {
-          height: 170px;
+          height: 140px;
           width: 100px;
           object-fit: cover;
           margin-right: 1rem;
@@ -127,29 +135,23 @@
         }
       }
       .description {
-        flex-grow: 1;
-        padding: 0rem;
-        
+        padding: 0;
       }
     }
     .iframeContainer {
+      position: relative;
+      top: 40rem;
+     box-shadow: none;
       width: 20rem;
-    }
-    .iframe {
-      width: 200px;
-      height: 150px;
-    }
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1050px) {
-  .DetailsContainer {
-    .DetailsDescription {
-      padding: 2rem;
-      .DetailsImg {
-        img {
-          width: 120px;
-        }
+      height: 15rem;
+      z-index: 0;
+      .iframe {
+        
+        width: 20rem;
+        height: 15rem;
+        
       }
     }
   }
 }
+
