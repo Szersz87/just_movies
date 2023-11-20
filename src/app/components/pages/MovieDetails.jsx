@@ -13,7 +13,6 @@ function MovieDetails() {
   const [showIframe, setShowIframe] = useState(false);
 
   const handlePlayClick = () => {
-    
     setShowIframe(!showIframe);
   };
 
@@ -31,25 +30,23 @@ function MovieDetails() {
         </div>
         <p className="description">{movieData.summary.label}</p>
       </div>
-      <div className={`iframeContainer ${showIframe ? 'showIframe' : ''}`}>
-        <ButtonWithIcon 
-        icon={faPlay} 
-        className="iconIframe" 
-        buttonContent="icon" 
-        onClick={handlePlayClick}
+      <div className={`iframeContainer ${showIframe ? "showIframe" : ""}`}>
+        <ButtonWithIcon
+          icon={faPlay}
+          className="iconIframe"
+          buttonContent="icon"
+          onClick={handlePlayClick}
         />
-          <div className="overlayIframe"></div>
+        <div className="overlayIframe"></div>
         {showIframe && (
-<>
-        <iframe
-        src={movieData.link[1].attributes.href}
-        className="iframe"
-        allowFullScreen
-        >
-          
-        </iframe>
-        </>
-          )}
+          <>
+            <iframe
+              src={movieData.link[1].attributes.href}
+              className="iframe"
+              allowFullScreen
+            ></iframe>
+          </>
+        )}
       </div>
     </div>
   );
@@ -59,5 +56,4 @@ export default MovieDetails;
 
 MovieDetails.propTypes = {
   movieData: PropTypes.object,
-  
 };

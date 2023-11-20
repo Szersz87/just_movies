@@ -6,9 +6,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
+import useGetMovies from "../../../shared/Hooks/UseGetMovies";
 
-export default function MyList() {
-  const myList = JSON.parse(localStorage.getItem("myList")) || [];
+
+export default function FavouriteList() {
+  const { movies: myList } = useGetMovies();
+
   return (
     <Swiper
       modules={[Navigation, Pagination, Parallax]}

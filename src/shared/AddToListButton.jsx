@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import ButtonWithIcon from "./ButtonWithIcon";
 import PropTypes from "prop-types";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
-import SetItem from "./SetItem";
-import GetItem from "./GetItem";
+import useGetMovies from "./Hooks/UseGetMovies";
 
 function AddToListButton({ movie }) {
+  const { movies, setMoviesInLocalStorage } = useGetMovies();
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    const myList = GetItem("myList") || [];
-    const isMovieInList = myList.some(
+    const isMovieInList = movies.some(
       (item) => item.title === movie["im:name"].label,
     );
     setIsLiked(isMovieInList);
@@ -18,11 +17,10 @@ function AddToListButton({ movie }) {
 
   const handleAddToListClick = () => {
     if (isLiked) {
-      const myList = GetItem("myList") || [];
-      const updatedList = myList.filter(
+      const updatedList = movies.filter(
         (item) => item.title !== movie["im:name"].label,
       );
-      SetItem("myList", updatedList);
+      setMoviesInLocalStorage(updatedList);
     } else {
       const movieToAdd = {
         title: movie["im:name"].label,
@@ -30,9 +28,7 @@ function AddToListButton({ movie }) {
         description: movie.summary.label,
         href: movie.link[1].attributes.href,
       };
-      const myList = GetItem("myList") || [];
-      myList.push(movieToAdd);
-      SetItem("myList", myList);
+      setMoviesInLocalStorage([...movies, movieToAdd]);
     }
 
     setIsLiked(!isLiked);

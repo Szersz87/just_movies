@@ -17,7 +17,6 @@
       height: 100vh;
       .movieTile {
         position: relative;
-        text-align: center;
         height: 25rem;
         left: 2.2rem;
         right: 2.2rem;
@@ -31,7 +30,7 @@
         button {
           position: absolute;
           top: 1rem;
-          right: 0rem;
+          right: -2rem;
           background: none;
           font-size: 2rem;
           cursor: pointer;
@@ -40,6 +39,7 @@
           z-index: 1;
         }
         .AddMeToList {
+          display: none;
           border: none;
           transition: 0.5s;
         }
@@ -49,6 +49,9 @@
 
         .AddMeToList:hover {
           font-size: 4rem;
+        }
+        &:hover .AddMeToList {
+          display: block;
         }
         &:hover img {
           filter: brightness(0.2);

@@ -14,7 +14,6 @@
       padding: 2rem;
     }
     .movieList {
-      
       .movieTile {
         position: relative;
         text-align: center;
@@ -22,27 +21,26 @@
         left: 2.2rem;
         right: 2.2rem;
         width: 8rem;
-        
+
         img {
           border-radius: 5px;
           width: 170px;
           transition: 0.8s;
         }
         button {
-
           position: absolute;
           top: 1rem;
-          right: 0rem;
+          right: -2rem;
           background: none;
           font-size: 2rem;
           cursor: pointer;
-          overflow: hidden;
           color: white;
           z-index: 1;
         }
         .AddMeToList {
+          display: none;
           border: none;
-          transition: 0.5s;
+          transition: 0.8s;
         }
         .liked {
           color: red;
@@ -50,17 +48,17 @@
 
         .AddMeToList:hover {
           font-size: 4rem;
-        
+        }
+        &:hover .AddMeToList {
+          display: block;
         }
         &:hover img {
           filter: brightness(0.2);
         }
-       
       }
     }
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .swiper-container {
@@ -70,16 +68,18 @@
     .Container {
       .movieList {
         .movieTile {
-          height: 10rem;
+          height: 15rem;
           width: 5rem;
           right: 1rem;
-          img{
-            width: 100px;
+          img {
+            margin-left: 4rem;
+            width: 150px;
+          }
+          button {
+            left: 10rem;
           }
         }
       }
     }
   }
 }
-
-

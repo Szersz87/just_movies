@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+
 export default function ReusableMovieList({ title, movies }) {
   let filteredMovies;
 
@@ -31,7 +32,7 @@ export default function ReusableMovieList({ title, movies }) {
             
             370: {
               width: 370,
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 0
             },
             
