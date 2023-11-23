@@ -6,11 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
-import useGetMovies from "../../../shared/Hooks/UseGetMovies";
-
+import useMoviesLocalStorage from "../../../shared/Hooks/UseMoviesLocalStorage";
 
 export default function FavouriteList() {
-  const { movies: myList } = useGetMovies();
+  const [myList] = useMoviesLocalStorage("myList");
 
   return (
     <Swiper
@@ -32,7 +31,11 @@ export default function FavouriteList() {
                     <img src={movie.imageUrl} alt={movie.title} />
                   </div>
                   <div className="text">
-                    <h3>{movie.description ? movie.description : "Description will be added soon ;)"}</h3>
+                    <h3>
+                      {movie.description
+                        ? movie.description
+                        : "Description will be added soon ;)"}
+                    </h3>
                   </div>
                 </div>
               </div>
