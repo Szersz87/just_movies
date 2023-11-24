@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { faCircleInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../shared/ButtonWithIcon";
 import PreviewModal from "../../../shared/PreviewModal";
+import PropTypes from "prop-types";
 
-const youtubeTrailerURL = "https://www.youtube.com/embed/1bjfXYXHjFo";
 
-function HeroButtons() {
+function HeroButtons({youtubeTrailerURL}) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleInfoClick = () => {
@@ -38,6 +38,10 @@ function HeroButtons() {
     </div>
   );
 }
+
+HeroButtons.propTypes = {
+  youtubeTrailerURL: PropTypes.string.isRequired,
+};
 
 export default HeroButtons;
 
