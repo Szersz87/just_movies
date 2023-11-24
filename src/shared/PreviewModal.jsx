@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 
 function PreviewModal({ isOpen, onRequestClose, videoUrl }) {
+  console.log("Is modal open?", isOpen);
   return (
     <ReactModal
       isOpen={isOpen}
