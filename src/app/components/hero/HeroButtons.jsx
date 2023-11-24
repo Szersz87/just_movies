@@ -3,43 +3,36 @@ import { faCircleInfo, faPlay } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../shared/ButtonWithIcon";
 import PreviewModal from "../../../shared/PreviewModal";
 
+
+const youtubeTrailerURL = "https://www.youtube.com/embed/1bjfXYXHjFo";
+
 function HeroButtons() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function handleInfoClick() {
-    alert("Here should be description of this movie, but i didn't put it. Sorry ;)");
-  }
+  const handleInfoClick = () => {
+    alert(
+      "Here should be description of this movie, but i didn't put it. Sorry ;)",
+    );
+  };
 
-  function handlePlayClick() {
-    setModalIsOpen(true);
-  }
-
-  function closeModal() {
-    setModalIsOpen(false);
-  }
-  const youtubeTrailerURL = "https://www.youtube.com/embed/1bjfXYXHjFo";
+  const toggleModal = () => setModalIsOpen(!modalIsOpen);
 
   return (
     <div className="cardBtns">
       <Button
         className="cardBtnInfo"
-        buttonContent="buttonContent"
         title="Info"
         icon={faCircleInfo}
         onClick={handleInfoClick}
-        />
+      />
       <Button
         className="cardBtnPlay"
         buttonContent="buttonContent"
         title="Play"
         icon={faPlay}
-        onClick={handlePlayClick}
+        onClick={toggleModal}
       />
-      <PreviewModal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        videoUrl={youtubeTrailerURL}
-      />
+      <PreviewModal onRequestClose={toggleModal} videoUrl={youtubeTrailerURL} />
     </div>
   );
 }

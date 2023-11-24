@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ReusableMovieList from "./ReusableMovieList"
 
 function MovieList({title,  movies }) {
+  
   return (
     <ReusableMovieList title={title} movies={movies}/>
   );

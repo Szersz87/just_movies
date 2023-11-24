@@ -24,7 +24,7 @@ function PreviewModal({ isOpen, onRequestClose, videoUrl }) {
 }
 
 PreviewModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool,
   onRequestClose: PropTypes.func.isRequired,
   videoUrl: PropTypes.string.isRequired
 };

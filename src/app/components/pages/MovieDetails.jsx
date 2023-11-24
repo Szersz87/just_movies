@@ -6,9 +6,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import ButtonWithIcon from "../../../shared/ButtonWithIcon";
 
 function MovieDetails() {
-  let { state } = useLocation();
-
-  const movieData = state.movieData;
+  const { state: { movieData } } = useLocation();
 
   const [showIframe, setShowIframe] = useState(false);
 
@@ -39,14 +37,12 @@ function MovieDetails() {
         />
         <div className="overlayIframe"></div>
         {showIframe && (
-          <>
-            <iframe
-              src={movieData.link[1].attributes.href}
-              className="iframe"
-              allowFullScreen
-            ></iframe>
-          </>
-        )}
+  <iframe
+    src={movieData.link[1].attributes.href}
+    className="iframe"
+    allowFullScreen
+  />
+)}
       </div>
     </div>
   );

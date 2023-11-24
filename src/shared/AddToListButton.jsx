@@ -50,7 +50,6 @@ function AddToListButton({ movie }) {
 
 AddToListButton.propTypes = {
   movie: PropTypes.object.isRequired,
-  addMovie: PropTypes.func.isRequired,
 };
 
 export default AddToListButton;

@@ -1,34 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
-function useMovies(genre, getRandom) {
+function useMovies(genre, enableRandomization) {
   const [movies, setMovies] = useState([]);
 
-  const fetchMoviesData = () => {
-    let apiUrl = "https://itunes.apple.com/us/rss/topmovies/limit=80/json";
-    if (genre) {
-      apiUrl =
-        "https://itunes.apple.com/us/rss/topmovies/limit=80/genre=${genre}/json";
+  const fetchMoviesData = async () => {
+    const apiUrl = genre
+      ? `https://itunes.apple.com/us/rss/topmovies/limit=80/genre=${genre}/json`
+      : "https://itunes.apple.com/us/rss/topmovies/limit=80/json";
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setMovies(data.feed.entry);
+    } catch (error) {
+      console.error("Failed to fetch movies:", error);
     }
-
-    fetch(apiUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setMovies(data.feed.entry);
-      });
-  };
-
-  const getRandomMovies = (count) => {
-    const shuffledMovies = [...movies].sort(() => 0.5 - Math.random());
-    return shuffledMovies.slice(0, count);
   };
 
   useEffect(() => {
     fetchMoviesData();
   }, [genre]);
 
-  return { movies, getRandomMovies: getRandom ? getRandomMovies : null };
+  const getRandomMovies = useMemo(() => {
+    if (!enableRandomization) return null;
+
+    return (count) => {
+      const shuffledMovies = [...movies].sort(() => 0.5 - Math.random());
+      return shuffledMovies.slice(0, count);
+    };
+  }, [movies, enableRandomization]);
+
+  return { movies, getRandomMovies };
 }
 
 export default useMovies;

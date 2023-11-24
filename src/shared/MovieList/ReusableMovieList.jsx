@@ -1,7 +1,9 @@
 import React from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import AddToListButton from "../AddToListButton";
 import PropTypes from "prop-types";
+import useMovies from "../../shared/Api";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { v4 as uuidv4 } from "uuid";
@@ -9,17 +11,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+export default function ReusableMovieList({ title }) {
+  const { movies, getRandomMovies } = useMovies(null, true);
 
-export default function ReusableMovieList({ title, movies }) {
-  let filteredMovies;
-
-  if (title === "Random Movies") {
-    filteredMovies = movies;
-  } else {
-    filteredMovies = Array.isArray(movies)
-      ? movies.filter((movie) => movie.category.attributes.term === title)
-      : movies;
-  }
+  const allMovies = useMemo(() => {
+    return title === "Random Movies" || !Array.isArray(movies)
+      ? getRandomMovies(10)
+      : movies.filter((movie) => movie.category.attributes.term === title);
+  }, [title, movies]);
+  
 
   return (
     <div className="Container">
@@ -29,30 +29,29 @@ export default function ReusableMovieList({ title, movies }) {
           modules={[Navigation, Pagination]}
           spaceBetween={10}
           breakpoints={{
-            
             370: {
               width: 370,
-              slidesPerView: 1,
-              spaceBetween: 0
+              slidesPerView: 2,
+              spaceBetween: 0,
             },
-            
+
             768: {
               width: 768,
               slidesPerView: 4,
-              spaceBetween: 20
+              spaceBetween: 20,
             },
             1200: {
               width: 1200,
               slidesPerView: 5,
-              spaceBetween: 30
+              spaceBetween: 30,
             },
-            
           }}
           navigation
           pagination={{ clickable: true }}
         >
-          {filteredMovies.length !== 0 &&
-            filteredMovies.map((movie) => (
+          {allMovies &&
+            allMovies.length !== 0 &&
+            allMovies.map((movie) => (
               <SwiperSlide key={uuidv4()}>
                 <div key={uuidv4()} className="movieTile">
                   <Link to="/movie/MovieDetails" state={{ movieData: movie }}>
@@ -70,7 +69,7 @@ export default function ReusableMovieList({ title, movies }) {
     </div>
   );
 }
+
 ReusableMovieList.propTypes = {
   title: PropTypes.string.isRequired,
-  movies: PropTypes.array.isRequired,
 };
