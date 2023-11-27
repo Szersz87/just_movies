@@ -23,6 +23,8 @@
         width: 8rem;
 
         img {
+          margin-top: 3rem;
+          margin-left: 4rem;
           border-radius: 5px;
           width: 170px;
           transition: 0.8s;
@@ -68,13 +70,14 @@
   .BoxForRandomMovies {
     .Container {
         .movieList {
-          margin-top: 5rem;
+          margin-top: 3rem;
         .movieTile {
-          height: 10rem;
-          width: 5rem;
+          height: 20rem;
+          width: 15rem;
           right: 1rem;
           img {
-            width: 100px;
+            margin-left: 4rem;
+            width: 170px;
           }
         }
       }

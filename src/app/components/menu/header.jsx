@@ -1,13 +1,13 @@
 import React from "react";
 import LeftNav from "./LeftNav";
-import NavMenu from "../pages/NavigationMenu";
 import RightNav from "./RightNavi";
+import HamburgerNav from "../pages/HamburgerNav"
 
 function Header() {
   return (
     <div className="navBar">
       <LeftNav />
-      <NavMenu />
+      <HamburgerNav />
       <RightNav />
     </div>
   );

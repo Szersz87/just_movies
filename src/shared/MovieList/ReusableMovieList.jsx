@@ -31,13 +31,13 @@ export default function ReusableMovieList({ title }) {
           breakpoints={{
             370: {
               width: 370,
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 0,
             },
 
             768: {
               width: 768,
-              slidesPerView: 4,
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             1200: {

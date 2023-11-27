@@ -115,32 +115,27 @@
     font-size: 0.9rem;
   }
     .DetailsDescription {
-      display: block;
-      float: left;
+      display: flex;
+      flex-wrap: wrap;
       padding-left: 1rem;
       padding-top: 2rem;
       padding-right: 1rem;
       
-      .DetailsImg {
-    
-        float: left;
         img {
-          height: 140px;
-          width: 100px;
-          object-fit: cover;
-          margin-right: 1rem;
+          width: 170px;
+          margin-left: 4rem;
         }
         .AddMeToList {
           font-size: 1rem;
         }
-      }
+      
       .description {
         padding: 0;
       }
     }
     .iframeContainer {
       position: relative;
-      top: 40rem;
+      top: 4rem;
      box-shadow: none;
       width: 20rem;
       height: 15rem;

@@ -1,30 +1,20 @@
 import { Outlet, Link } from "react-router-dom";
-import React, { useState } from 'react';
-import Hamburger from '../pages/HamburgerNav'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function NavigationMenu() {
 
-  const [isHamburgerOpen, setHamburgerOpen] = useState(false);
-
-  const toggleHamburger = () =>{
-    setHamburgerOpen(!isHamburgerOpen)
-  }
+export default function NavigationMenu({ isOpen, closeMenu }) {
   return (
     <>
-      <nav className={`webMenu ${isHamburgerOpen ? 'hamburgerOpen' : ''}`}>
-        <div className="hamburger" onClick={toggleHamburger}>
-          
-          <Hamburger />
-        </div>
-        <div className="overlayBurgerMenu"></div>
+      <nav className={`webMenu ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/randomMovies">Random Movies</Link>
           </li>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/favouriteList">Favourite List</Link>
           </li>
         </ul>
@@ -34,3 +24,7 @@ export default function NavigationMenu() {
     </>
   );
 }
+NavigationMenu.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+};

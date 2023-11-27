@@ -23,6 +23,8 @@
         width: 8rem;
 
         img {
+          margin-top: 2rem;
+          margin-left: 4rem;
           border-radius: 5px;
           width: 170px;
           transition: 0.8s;
@@ -60,20 +62,27 @@
   }
 }
 
+.swiper-pagination-clickable {
+  .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
 @media screen and (max-width: 768px) {
   .swiper-container {
     width: 100vw;
+    height: 30rem;
+   
   }
   .BoxForMovies {
     .Container {
       .movieList {
+        height: 30rem;
         .movieTile {
-          height: 15rem;
+          height: 20rem;
           width: 5rem;
           right: 1rem;
           img {
-            margin-left: 4rem;
-            width: 150px;
+            width: 170px;
           }
           button {
             left: 10rem;

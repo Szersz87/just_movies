@@ -1,104 +1,165 @@
 .navBar {
+  display: flex;
   background-color: #a52017;
   color: white;
-  display: flex;
   height: 10vh;
-  width: 100%vh;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.images {
-  img {
-    max-height: 10vh;
-    width: auto;
-  }
-}
-.iconsContainer svg {
-  margin-right: 1rem;
-}
 
-.webMenu {
-  position: absolute;
-  top: 5vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.3rem;
-  font-weight: bold;
-
-  ul {
-    display: flex;
-    list-style-type: none;
-    li {
-      margin-left: 4rem;
-      a {
-        text-decoration: none;
-        color: white;
-      }
-      a:hover {
-        color: black;
-      }
-    }
-  }
-  .hamburger {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
   .images {
     img {
-      width: 10rem;
+      margin-left: -3rem;
+      max-height: 10vh;
+      width: auto;
     }
   }
-  .iconsContainer {
-    display: none;
-  }
-  .webMenu {
-    ul {
-      display: none;
-    }
-    .hamburger {
-      display: block;
-      position: relative;
-      left: 8rem;
-      z-index: 10;
-    }
-  }
-  .hamburgerOpen {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    background-color: none;
-    left: 16rem;
-    height: 10vh;
-    z-index: 20;
-    .overlayBurgerMenu {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 100;
-    }
-    ul {
-      display: flex;
-      flex-direction: column;
-      margin-top: 2rem;
-      
-      li {
-        background: rgba(0, 0, 0, 0.8);
-        padding: 1rem;
-        color: white;
 
-        a:hover {
-          color: yellow;
+  .NavigationMenu {
+    .hamburgerIcon {
+      display: none;
+      padding: 1em;
+      width: 2rem;
+      height: 2rem;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+      z-index: 10;
+      cursor: pointer;
+
+      .burger {
+        width: 2rem;
+        height: 0.25rem;
+        border-radius: 10px;
+        background-color: white;
+        transform-origin: 1px;
+        transition: transform 0.3s linear;
+
+        &:nth-child(1) {
+          transform: rotate(0);
+          margin-top: 0;
+        }
+
+        &:nth-child(2) {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(0);
+          margin-bottom: 0;
         }
       }
     }
-    .hamburger {
-      top: 1rem;
-      left: 9rem;
+
+    .webMenu {
+      position: absolute;
+      top: 5vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.4rem;
+      font-weight: bold;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin-left: 2rem;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+
+          a:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .iconsContainer svg {
+    margin-right: 1rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .images {
+      img {
+        margin-left: 0;
+        width: 15rem;
+      }
+    }
+
+    .iconsContainer {
+      display: none;
+    }
+
+    .NavigationMenu {
+      .webMenu {
+        left: 0;
+        top: 0;
+        z-index: 100;
+        ul {
+          display: none;
+        }
+      }
+      .hamburgerIcon {
+        display: flex;
+        color: white;
+        z-index: 1000;
+      }
+
+      &.open {
+        .burger {
+          background-color: yellow;
+
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            margin-top: 0;
+          }
+
+          &:nth-child(2) {
+            transform: scaleX(0);
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            margin-bottom: 0;
+          }
+          z-index: 1000;
+        }
+
+        .webMenu {
+          ul {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            position: fixed;
+            transform: translateX(0);
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+
+            li {
+              padding: 1rem;
+              font-size: 2rem;
+              color: white;
+
+              a:hover {
+                color: yellow;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

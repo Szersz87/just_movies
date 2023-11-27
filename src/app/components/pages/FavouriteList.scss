@@ -33,11 +33,18 @@
     }
   }
 }
+.swiper-pagination-clickable {
+  .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
 @media screen and (max-width: 768px) {
   .swiper-container {
     width: 100vw;
+    background-color: black;
   }
   .myListContainer {
+    height: 100%;
     background-color: black;
     padding: 2rem;
     padding-top: 2rem;
@@ -48,22 +55,16 @@
       font-weight: bold;
   }
   .description {
-        display: block;
-        float: left;
-      
-      .text {
-        position: relative;
-        
-        
-        
-      }
+        display: flex;
+        flex-wrap: wrap;
       .image {
         float: left;
         margin-right: 4rem;
         
         
         img {
-          width: 120px;
+          margin-left: 4rem;
+          width: 170px;
         }
       }
     }
