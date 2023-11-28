@@ -28,7 +28,7 @@ function MovieDetails() {
         </div>
         <p className="description">{movieData.summary.label}</p>
       </div>
-      <div className={`iframeContainer ${showIframe ? "showIframe" : ""}`}>
+      <div className={`iframeContainer ${showIframe && "showIframe" }`}>
         <ButtonWithIcon
           icon={faPlay}
           className="iconIframe"

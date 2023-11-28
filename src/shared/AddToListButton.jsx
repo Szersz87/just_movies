@@ -3,46 +3,47 @@ import ButtonWithIcon from "./ButtonWithIcon";
 import PropTypes from "prop-types";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import useMoviesLocalStorage from "./Hooks/UseMoviesLocalStorage";
+// import { removeMovie } from "./Hooks/MovieActionsHelper"
 
 function AddToListButton({ movie }) {
-  const [myList, setMyList, addMovie] = useMoviesLocalStorage("myList", []);
+  const [moviesList, setMoviesList, addMovies] = useMoviesLocalStorage("myList", []);
 
-  const checkIfMovieInList = (id) => {
-    return myList.some((item) => item.title === id);
+  const isMovieExist = (id) => {
+    return moviesList.some((item) => item.title === id);
   };
 
-  const [isLiked, setIsLiked] = useState(() =>
-    checkIfMovieInList(movie["im:name"].label),
+  const [isMovieLiked, setIsLiked] = useState(() =>
+    isMovieExist(movie["im:name"].label),
   );
 
   useEffect(() => {
-    setIsLiked(checkIfMovieInList(movie["im:name"].label));
-  }, [movie, myList]);
+    setIsLiked(isMovieExist(movie["im:name"].label));
+  }, [movie, moviesList]);
 
   const handleAddToListClick = () => {
-    isLiked ? removeFromList(movie["im:name"].label) : addToList(movie);
-    setIsLiked(!isLiked);
+    isMovieLiked ? removeMovie(movie["im:name"].label) : addMovie(movie);
+    setIsLiked(!isMovieLiked);
   };
 
-  const removeFromList = (id) => {
-    const updatedList = myList.filter((item) => item.title !== id);
-    setMyList(updatedList);
+  const removeMovie = (id) => {
+    const updatedList = moviesList.filter((item) => item.title !== id);
+    setMoviesList(updatedList);
   };
 
-  const addToList = (movie) => {
+  const addMovie = (movie) => {
     const movieToAdd = {
       title: movie["im:name"].label,
       imageUrl: movie["im:image"][2].label,
       description: movie.summary.label,
       href: movie.link[1].attributes.href,
     };
-    addMovie(movieToAdd);
+    addMovies(movieToAdd);
   };
 
   return (
     <ButtonWithIcon
-      icon={isLiked ? faHeart : faHeartBroken}
-      className={`AddMeToList ${isLiked ? "liked" : ""}`}
+      icon={isMovieLiked ? faHeart : faHeartBroken}
+      className={`AddMeToList ${isMovieLiked ? "liked" : ""}`}
       onClick={handleAddToListClick}
     />
   );

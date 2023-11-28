@@ -9,7 +9,7 @@ import "swiper/css/parallax";
 import useMoviesLocalStorage from "../../../shared/Hooks/UseMoviesLocalStorage";
 
 export default function FavouriteList() {
-  const [myList] = useMoviesLocalStorage("myList");
+  const [savedMovies] = useMoviesLocalStorage("myList");
 
   return (
     <Swiper
@@ -22,7 +22,7 @@ export default function FavouriteList() {
       <div className="Container">
         <h2>My List</h2>
         <div className="movieList">
-          {myList.map((movie) => (
+          {savedMovies.map((movie) => (
             <SwiperSlide key={uuidv4()}>
               <div key={uuidv4()} className="myListContainer">
                 <h2 className="title">{movie.title}</h2>
