@@ -22,8 +22,8 @@ const HamburgerNav = () => {
 };
 
 HamburgerNav.propTypes = {
-  open: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired,
+  open: PropTypes.bool,
+  setOpen: PropTypes.func,
 };
 
 export default HamburgerNav;

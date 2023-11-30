@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toggleMovie } from "./MovieActionsHelper";
 
 const useMoviesLocalStorage = (key, initialValue = []) => {
   const [movies, setMovies] = useState(() => {
@@ -6,7 +7,7 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return initialValue;
     }
   });
@@ -16,15 +17,11 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
       const serializedState = JSON.stringify(movies);
       window.localStorage.setItem(key, serializedState);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [movies, key]);
 
-  const addMovie = (movie) => {
-    setMovies([...movies, movie]);
-  };
-
-  return [movies, setMovies, addMovie];
+  return [movies, (movie) => toggleMovie(movies, setMovies, movie)];
 };
 
 export default useMoviesLocalStorage;
