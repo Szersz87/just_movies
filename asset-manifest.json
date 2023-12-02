@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/just_movies/static/css/main.cfcf31a4.css",
+    "main.js": "/just_movies/static/js/main.18ca9526.js",
+    "static/js/787.14a44e49.chunk.js": "/just_movies/static/js/787.14a44e49.chunk.js",
+    "static/media/racing-3415413_1280.jpg": "/just_movies/static/media/racing-3415413_1280.ac4a8720f4526dbc61ea.jpg",
+    "static/media/JUST MOVIES Logo - Original - 5000x5000.png": "/just_movies/static/media/JUST MOVIES Logo - Original - 5000x5000.e0f1cb1f2a5e1723463d.png",
+    "index.html": "/just_movies/index.html",
+    "main.cfcf31a4.css.map": "/just_movies/static/css/main.cfcf31a4.css.map",
+    "main.18ca9526.js.map": "/just_movies/static/js/main.18ca9526.js.map",
+    "787.14a44e49.chunk.js.map": "/just_movies/static/js/787.14a44e49.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cfcf31a4.css",
+    "static/js/main.18ca9526.js"
+  ]
+}
