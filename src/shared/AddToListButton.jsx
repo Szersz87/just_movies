@@ -1,24 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ButtonWithIcon from "./ButtonWithIcon";
-import PropTypes from "prop-types";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 import useMoviesLocalStorage from "./Hooks/UseMoviesLocalStorage";
 
 function AddToListButton({ movie }) {
-  const [moviesList, toggleMovie] = useMoviesLocalStorage("myList", []);
-  const isMovieLiked = moviesList.some((item) => item.title === movie["im:name"].label);
-
-  useEffect(() => {
-  }, [moviesList]);
+  const [movies, toggleMovie, setMovies] = useMoviesLocalStorage("myList", []);
 
   const handleAddToListClick = () => {
-    toggleMovie(movie);
+    toggleMovie(movies, setMovies, movie);
   };
+  
+
+  const isLiked = movie.isLiked || movies.some((item) => item.title === movie["im:name"].label);
 
   return (
     <ButtonWithIcon
-      icon={isMovieLiked ? faHeart : faHeartBroken}
-      className={`AddMeToList ${isMovieLiked ? "liked" : ""}`}
+      icon={isLiked ? faHeart : faHeartBroken}
+      className={`AddMeToList ${isLiked ? "liked" : ""}`}
       onClick={handleAddToListClick}
     />
   );
@@ -29,3 +28,5 @@ AddToListButton.propTypes = {
 };
 
 export default AddToListButton;
+
+

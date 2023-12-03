@@ -12,6 +12,10 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
     }
   });
 
+  const addToLocalStorage = (movie) => {
+    toggleMovie(movies, setMovies, movie); 
+  };
+
   useEffect(() => {
     try {
       const serializedState = JSON.stringify(movies);
@@ -21,7 +25,8 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
     }
   }, [movies, key]);
 
-  return [movies, (movie) => toggleMovie(movies, setMovies, movie)];
+  return [movies, addToLocalStorage];
 };
 
 export default useMoviesLocalStorage;
+

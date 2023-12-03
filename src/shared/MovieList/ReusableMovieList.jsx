@@ -1,5 +1,4 @@
-import React from "react";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import AddToListButton from "../AddToListButton";
 import PropTypes from "prop-types";
@@ -10,16 +9,17 @@ import { v4 as uuidv4 } from "uuid";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import useMoviesLocalStorage from "../Hooks/UseMoviesLocalStorage";
 
-export default function ReusableMovieList({ title }) {
-  const { movies, getRandomMovies } = useMovies(null, true);
+const ReusableMovieList = ({ title }) => {
+  const { getRandomMovies, movies } = useMovies(null, true);
+  const [myListMovies] = useMoviesLocalStorage("myList", []);
 
   const allMovies = useMemo(() => {
     return title === "Random Movies" || !Array.isArray(movies)
       ? getRandomMovies(10)
       : movies.filter((movie) => movie.category.attributes.term === title);
   }, [title, movies]);
-  
 
   return (
     <div className="Container">
@@ -34,7 +34,6 @@ export default function ReusableMovieList({ title }) {
               slidesPerView: 1,
               spaceBetween: 0,
             },
-
             768: {
               width: 768,
               slidesPerView: 2,
@@ -60,7 +59,10 @@ export default function ReusableMovieList({ title }) {
                       alt={movie["im:name"].label}
                     />
                   </Link>
-                  <AddToListButton movie={movie} />
+                  <AddToListButton
+                    movie={movie}
+                    isLiked={myListMovies.some((item) => item.title === movie["im:name"].label && item.isLiked)}
+                  />
                 </div>
               </SwiperSlide>
             ))}
@@ -68,8 +70,10 @@ export default function ReusableMovieList({ title }) {
       </div>
     </div>
   );
-}
+};
 
 ReusableMovieList.propTypes = {
   title: PropTypes.string.isRequired,
 };
+
+export default ReusableMovieList;
