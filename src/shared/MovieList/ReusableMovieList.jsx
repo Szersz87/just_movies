@@ -9,11 +9,9 @@ import { v4 as uuidv4 } from "uuid";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import useMoviesLocalStorage from "../Hooks/UseMoviesLocalStorage";
 
 const ReusableMovieList = ({ title }) => {
   const { getRandomMovies, movies } = useMovies(null, true);
-  const [myListMovies] = useMoviesLocalStorage("myList", []);
 
   const allMovies = useMemo(() => {
     return title === "Random Movies" || !Array.isArray(movies)
@@ -59,10 +57,7 @@ const ReusableMovieList = ({ title }) => {
                       alt={movie["im:name"].label}
                     />
                   </Link>
-                  <AddToListButton
-                    movie={movie}
-                    isLiked={myListMovies.some((item) => item.title === movie["im:name"].label && item.isLiked)}
-                  />
+                  <AddToListButton movie={movie} />
                 </div>
               </SwiperSlide>
             ))}

@@ -1,45 +1,46 @@
-const createMovieToAdd = (movie) => {
-  const title = movie?.["im:name"]?.label ?? "No Title";
-  const imageUrl = movie?.["im:image"]?.[2]?.label ?? "No Image";
-  const description = movie?.summary?.label ?? "No Description";
-  const href = movie?.link?.[1]?.attributes?.href ?? "#";
-
-  return {
-    title,
-    imageUrl,
-    description,
-    href,
+const addMovie = (setMovies, movie) => {
+  const movieToAdd = {
+    title: movie["im:name"].label,
+    imageUrl: movie?.["im:image"]?.[2]?.label,
+    description: movie?.summary?.label,
+    href: movie?.link?.[1]?.attributes?.href,
     isLiked: true,
   };
-};
 
-
-const addMovie = (setMovies, movie) => {
-  console.log(movie)
-  const movieToAdd = createMovieToAdd(movie);
+  console.log("Adding movie:", movieToAdd);
   setMovies((prev) => [...prev, movieToAdd]);
 };
 
-
 const removeMovie = (setMovies, title) => {
+  console.log("Removing movie with title:", title);
   setMovies((prev) => prev.filter((item) => item.title !== title));
 };
 
-const toggleMovie = (movies, setMovies, movie) => {
-  const movieWithLikedFlag = createMovieToAdd({
-    ...movie,
-    isLiked: !movie.isLiked,
-  });
+const toggleMovie = (setMovies, movie) => {
+  const movieTitle = movie["im:name"].label;
 
-  if (movie.isLiked) {
-    removeMovie(setMovies, movieWithLikedFlag.title);
-  } else {
-    addMovie(setMovies, movieWithLikedFlag);
-  }
+  setMovies((prev) => {
+    const existingMovie = prev.find((item) => item.title === movieTitle);
+
+    if (existingMovie) {
+      if (existingMovie.isLiked) {
+        removeMovie(setMovies, movieTitle);
+      } else {
+        addMovie(setMovies, movie);
+      }
+    }
+
+    return prev.map((item) => {
+      if (item.title === movieTitle) {
+        return { ...item, isLiked: !item.isLiked };
+      }
+      return item;
+    });
+  });
 };
 
+export { addMovie, removeMovie, toggleMovie };
 
-export { createMovieToAdd, addMovie, removeMovie, toggleMovie };
 
   
   

@@ -13,8 +13,10 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
   });
 
   const addToLocalStorage = (movie) => {
-    toggleMovie(movies, setMovies, movie); 
+    console.log("Adding to localStorage:", movie);
+    toggleMovie(setMovies, movie);
   };
+  
 
   useEffect(() => {
     try {
@@ -29,4 +31,6 @@ const useMoviesLocalStorage = (key, initialValue = []) => {
 };
 
 export default useMoviesLocalStorage;
+
+
 

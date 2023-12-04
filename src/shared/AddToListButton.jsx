@@ -5,14 +5,14 @@ import PropTypes from "prop-types";
 import useMoviesLocalStorage from "./Hooks/UseMoviesLocalStorage";
 
 function AddToListButton({ movie }) {
-  const [movies, toggleMovie, setMovies] = useMoviesLocalStorage("myList", []);
+  const [, addToLocalStorage] = useMoviesLocalStorage("myList", []);
 
   const handleAddToListClick = () => {
-    toggleMovie(movies, setMovies, movie);
+    addToLocalStorage(movie);
   };
   
-
-  const isLiked = movie.isLiked || movies.some((item) => item.title === movie["im:name"].label);
+  const isLiked = movie.isLiked || false; 
+  
 
   return (
     <ButtonWithIcon
@@ -28,5 +28,6 @@ AddToListButton.propTypes = {
 };
 
 export default AddToListButton;
+
 
 

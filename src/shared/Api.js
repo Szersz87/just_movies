@@ -12,11 +12,10 @@ function useMovies(genre, enableRandomization) {
       const response = await fetch(apiUrl);
       const data = await response.json();
 
-      console.log("Fetched data from API:", data);
+      
       const moviesWithLikedFlag = Array.isArray(data.feed.entry)
       ? data.feed.entry.map((movie) => {
-        console.log("Processing movie from API:", movie);
-
+        
         return {
         ...movie,
         isLiked: false,
@@ -24,11 +23,12 @@ function useMovies(genre, enableRandomization) {
       })
       : [];
 
-      console.log("Movies with liked flag:", moviesWithLikedFlag);
+      
 
       setMovies(moviesWithLikedFlag);
     } catch (error) {
       console.error("Failed to fetch movies:", error);
+      setMovies([]);
     }
   };
 
