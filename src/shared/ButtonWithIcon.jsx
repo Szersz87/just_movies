@@ -1,13 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Icon from "./Icon";
 
-function Button({ title, className, icon }) {
+function ButtonWithIcon({ title, className, icon, onClick, buttonContent }) {
   return (
-    <button className={className}>
+    <button className={className} onClick={onClick}>
+      <div className={buttonContent}>
       <Icon src={icon} />
       <p>{title}</p>
+      </div>
     </button>
   );
 }
+ButtonWithIcon.propTypes = {
+  title: PropTypes.string, 
+  className: PropTypes.string,        
+  icon: PropTypes.string.optional,  
+  onClick: PropTypes.func.isRequired,
+  buttonContent: PropTypes.string 
+};
 
-export default Button;
+
+export default ButtonWithIcon;
