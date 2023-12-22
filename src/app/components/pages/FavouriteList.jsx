@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
-import useMoviesLocalStorage from "../../../shared/Hooks/UseMoviesLocalStorage";
+import { useMoviesLocalStorage }  from "../../../shared/Hooks/UseMoviesLocalStorage";
 
 export default function FavouriteList() {
   const [savedMovies] = useMoviesLocalStorage("myList");

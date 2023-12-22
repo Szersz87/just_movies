@@ -2,17 +2,15 @@ import React from "react";
 import ButtonWithIcon from "./ButtonWithIcon";
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
-import useMoviesLocalStorage from "./Hooks/UseMoviesLocalStorage";
+import { useAddToLocalStorage } from "../shared/Hooks/UseMoviesLocalStorage";
 
 function AddToListButton({ movie }) {
-  const [, addToLocalStorage] = useMoviesLocalStorage("myList", []);
+  const addToLocalStorage = useAddToLocalStorage();
+  
 
   const handleAddToListClick = () => {
     addToLocalStorage(movie);
   };
-  
-  const isLiked = movie.isLiked || false; 
-  
 
   return (
     <ButtonWithIcon
@@ -28,6 +26,9 @@ AddToListButton.propTypes = {
 };
 
 export default AddToListButton;
+
+
+
 
 
 

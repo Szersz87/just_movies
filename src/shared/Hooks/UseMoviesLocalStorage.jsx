@@ -1,36 +1,36 @@
-import { useState, useEffect } from "react";
-import { toggleMovie } from "./MovieActionsHelper";
+import { useState } from "react";
 
-const useMoviesLocalStorage = (key, initialValue = []) => {
-  const [movies, setMovies] = useState(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.error(error);
-      return initialValue;
-    }
-  });
-
-  const addToLocalStorage = (movie) => {
-    console.log("Adding to localStorage:", movie);
-    toggleMovie(setMovies, movie);
-  };
-  
-
-  useEffect(() => {
-    try {
-      const serializedState = JSON.stringify(movies);
-      window.localStorage.setItem(key, serializedState);
-    } catch (error) {
-      console.error(error);
-    }
-  }, [movies, key]);
-
-  return [movies, addToLocalStorage];
+const useMoviesLocalStorage = () => {
+  const [movies, setMovies] = useState();
+  try {
+    const items = window.localStorage.getItem("movies");
+    setMovies(items ? JSON.parse(items) : []);
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+  return [movies, setMovies];
 };
 
-export default useMoviesLocalStorage;
+const toggleMovie = (movie) => {
+  const items = window.localStorage.getItem("movies");
+  const movies = items ? JSON.parse(items) : [];
+  return movies.map((item) =>
+      item.title === movie.title ? { ...item, isLiked: !item.isLiked } : item
+    )
+  
+};
+const useAddToLocalStorage = (movie, toggleMovie) => {
+  toggleMovie(movie)
+  try {
+    
+    const serializedState = JSON.stringify(movie);
+    window.localStorage.setItem("movies", serializedState);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 
 
+export { useMoviesLocalStorage, useAddToLocalStorage, toggleMovie };
