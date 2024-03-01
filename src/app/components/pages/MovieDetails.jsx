@@ -14,6 +14,8 @@ function MovieDetails() {
     setShowIframe(!showIframe);
   };
 
+  console.log(movieData)
+
   return (
     <div className="DetailsContainer">
       <h2>{movieData["im:name"].label}</h2>
