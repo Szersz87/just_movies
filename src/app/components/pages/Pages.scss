@@ -1,0 +1,94 @@
+.BoxForMovies {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  flex-wrap: wrap;
+  h2 {
+    color: white;
+  }
+  .Container {
+    height: 100%;
+    max-width: 100%;
+    padding-top: 2rem;
+    h2 {
+      padding: 2rem;
+    }
+    .movieList {
+      .movieTile {
+        position: relative;
+        text-align: center;
+        height: 25rem;
+        left: 2.2rem;
+        right: 2.2rem;
+        width: 8rem;
+
+        img {
+          margin-top: 2rem;
+          margin-left: 4rem;
+          border-radius: 5px;
+          width: 170px;
+          transition: 0.8s;
+        }
+        button {
+          position: absolute;
+          top: 2rem;
+          left: 5rem;
+          background: none;
+          font-size: 2rem;
+          cursor: pointer;
+          color: white;
+          z-index: 1;
+        }
+        .AddMeToList {
+          display: none;
+          border: none;
+          transition: 0.8s;
+        }
+        .liked {
+          color: red;
+        }
+
+        .AddMeToList:hover {
+          font-size: 4rem;
+        }
+        &:hover .AddMeToList {
+          display: block;
+        }
+        &:hover img {
+          filter: brightness(0.2);
+        }
+      }
+    }
+  }
+}
+
+.swiper-pagination-clickable {
+  .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .swiper-container {
+    width: 100vw;
+    height: 30rem;
+   
+  }
+  .BoxForMovies {
+    .Container {
+      .movieList {
+        height: 30rem;
+        .movieTile {
+          height: 20rem;
+          width: 5rem;
+          right: 1rem;
+          img {
+            width: 170px;
+          }
+          button {
+            left: 10rem;
+          }
+        }
+      }
+    }
+  }
+}

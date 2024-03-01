@@ -1,31 +1,30 @@
 import { Outlet, Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function NavigationMenu() {
+
+export default function NavigationMenu({ isOpen, closeMenu }) {
   return (
     <>
-      <nav className="menu">
+      <nav className={`webMenu ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li>
+          <li onClick={closeMenu}>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/series">Series</Link>
+          <li onClick={closeMenu}>
+            <Link to="/randomMovies">Random Movies</Link>
           </li>
-          <li>
-            <Link to="/movies">Movies</Link>
-          </li>
-          <li>
-            <Link to="/newAndPopular">New&Popular</Link>
-          </li>
-          <li>
-            <Link to="/myList">MyList</Link>
+          <li onClick={closeMenu}>
+            <Link to="/favouriteList">Favourite List</Link>
           </li>
         </ul>
       </nav>
 
-
       <Outlet />
-      
     </>
   );
 }
+NavigationMenu.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+};

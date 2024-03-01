@@ -1,0 +1,72 @@
+.Container {
+  background-color: black;
+  height: 100vh;
+}
+.myListContainer {
+  background-color: black;
+  padding: 4rem;
+  padding-top: 5rem;
+    padding-bottom: 10rem;
+    height: 100vh;
+  .title {
+    color: #fff;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.description {
+      color: #fff;
+    display: flex;
+    text-align: center;
+
+    .items {
+      margin: 2rem;
+      max-width: 40rem;
+    }
+    .image {
+      position: relative;
+      width: 20%;
+      height: 40%;
+      img {
+        width: 170px;
+      }
+    }
+  }
+}
+.swiper-pagination-clickable {
+  .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
+@media screen and (max-width: 768px) {
+  .swiper-container {
+    width: 100vw;
+    background-color: black;
+  }
+  .myListContainer {
+    height: 100%;
+    background-color: black;
+    padding: 2rem;
+    padding-top: 2rem;
+    .title {
+      color: #fff;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+  }
+  .description {
+        display: flex;
+        flex-wrap: wrap;
+      .image {
+        float: left;
+        margin-right: 4rem;
+        
+        
+        img {
+          margin-left: 4rem;
+          width: 170px;
+        }
+      }
+    }
+  }
+}

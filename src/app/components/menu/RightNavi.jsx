@@ -7,12 +7,19 @@ import {
   faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 
-const iconList = [faSearch, faUser, faBell, faInfo];
+const iconList = [
+  { id: "search", icon: faSearch },
+  { id: "user", icon: faUser },
+  { id: "bell", icon: faBell },
+  { id: "info", icon: faInfo },
+];
 
 function RightNav() {
   return (
     <div className="iconsContainer">
-      {iconList.map(icon => <Icon src={icon} /> )}
+      {iconList.map((iconData) => (
+        <Icon key={iconData.id} src={iconData.icon} />
+      ))}
     </div>
   );
 }
