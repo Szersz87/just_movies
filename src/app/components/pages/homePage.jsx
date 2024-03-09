@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../hero/Hero";
+import Hero from "../hero/HeroComponent";
 import useMovies from "../../../shared/Api";
 import MovieList from "../../../shared/MovieList/MovieList";
 
