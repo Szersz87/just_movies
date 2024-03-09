@@ -1,5 +1,5 @@
 import React from "react";
-import LeftNav from "./LeftNav";
+import LeftNav from "./LeftNavCom";
 import RightNav from "./RightNavi";
 import HamburgerNav from "../pages/HamburgerNav"
 
