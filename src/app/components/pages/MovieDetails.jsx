@@ -14,7 +14,6 @@ function MovieDetails() {
     setShowIframe(!showIframe);
   };
 
-  console.log(movieData)
 
   return (
     <div className="DetailsContainer">

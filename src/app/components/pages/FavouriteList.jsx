@@ -6,10 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
-import { useMoviesLocalStorage }  from "../../../shared/Hooks/UseMoviesLocalStorage";
+import { useLocalStorage }  from "../../../shared/Hooks/UseLocalStorage";
 
 export default function FavouriteList() {
-  const [savedMovies] = useMoviesLocalStorage("myList");
+  const [value] = useLocalStorage("movies");
+  
 
   return (
     <Swiper
@@ -22,18 +23,18 @@ export default function FavouriteList() {
       <div className="Container">
         <h2>My List</h2>
         <div className="movieList">
-          {savedMovies.map((movie) => (
+          {value && value.map((movies) => (
             <SwiperSlide key={uuidv4()}>
               <div key={uuidv4()} className="myListContainer">
-                <h2 className="title">{movie.title}</h2>
+                <h2 className="title">{movies.title.label}</h2>
                 <div className="description">
                   <div className="image">
-                    <img src={movie.imageUrl} alt={movie.title} />
+                    <img src={movies["im:image"][2].label} alt={movies.title.label} />
                   </div>
                   <div className="text">
                     <h3>
-                      {movie.description
-                        ? movie.description
+                      {movies.summary.label
+                        ? movies.summary.label
                         : "Description will be added soon ;)"}
                     </h3>
                   </div>
